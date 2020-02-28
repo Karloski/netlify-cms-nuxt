@@ -6,6 +6,16 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: 'blog_categories'
+    label: 'Blog Category'
+    format: 'json'
+    folder: 'assets/content/blog/categories'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Name', name: 'name' }
+      - { label: 'Slug', name: 'slug', pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Cannot contain spaces, capital letters, or special characters. You may separate words with dashes and numbers are allowed."], hint: "This will be used in the URL." }
   - name: 'blog'
     label: 'Blog'
     format: 'json'
@@ -13,9 +23,51 @@ collections:
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Featured Image', name: 'featured image', widget: 'image', required: false }
+      - label: 'Category'
+        name: 'blog_category'
+        widget: 'relation'
+        collection: 'blog_categories'
+        searchFields: ['slug']
+        valueField: 'name'
+        displayFields: ['slug']
+        multiple: false
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'gaming_posts'
+    label: 'Gaming'
+    format: 'json'
+    folder: 'assets/content/blog'
+    filter: { field: 'blog_category', value: 'gaming' }
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Featured Image', name: 'featured image', widget: 'image', required: false }
+      - label: 'Category'
+        name: 'blog_category'
+        widget: 'relation'
+        collection: 'blog_categories'
+        searchFields: ['slug']
+        valueField: 'name'
+        displayFields: ['slug']
+        multiple: false
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - label: 'About Page'
+        name: "about"
+        file: "site/content/about.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - label: Team
+            name: team
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Photo, name: photo, widget: image}
