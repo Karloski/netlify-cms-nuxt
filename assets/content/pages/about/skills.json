@@ -1,0 +1,15 @@
+{
+  "categories": [
+    {
+      "name": "Languages",
+      "subcategories": [
+        {
+          "icon": "/img/php.svg",
+          "name": "php",
+          "overview": "Some overview",
+          "examples": "Some examples"
+        }
+      ]
+    }
+  ]
+}
