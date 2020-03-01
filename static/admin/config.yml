@@ -6,68 +6,140 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog_categories'
-    label: 'Blog Category'
+  - label: Settings
+    name: settings
+    files:
+      - label: General
+        name: general
+        format: json
+        file: 'assets/content/settings/general.json'
+        fields:
+          - { label: Title, name: title, widget: string, hint: 'The title of the website' }
+          - { label: Favicon, name: icon, widget: image }
+          - { label: 'Loading Color', name: loadingColor, widget: string, default: '#000000' }
+      - label: Manifest
+        name: manifst
+        format: json
+        file: 'assets/content/settings/styling.json'
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: 'Short name', name: shortName, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: 'Theme color', name: themeColor, widget: string }
+          - { label: 'Background color', name: backgroundColor, widget: string }
+          - { label: Lang, name: lang, widget: string, default: en }
+      - label: Social
+        name: social
+        format: json
+        file: 'assets/content/settings/social.json'
+        fields:
+          - label: Icons
+            name: icons
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Icon, name: icon, widget: image }
+              - { label: url, name: url, widget: string }
+      - label: Blog
+        name: blog
+        format: json
+        file: 'assets/content/settings/blog.json'
+        fields:
+          - label: Categories
+            name: categories
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Icon, name: icon, widget: image, default: '/static/img/icon.svg' }
+              - { label: slug, name: slug, widget: string }
+
+  - name: 'blog_gaming'
+    label: 'Gaming Blog'
     format: 'json'
-    folder: 'assets/content/blog/categories'
+    folder: 'assets/content/blog/gaming'
     create: true
-    editor:
-      preview: false
-    fields:
-      - { label: 'Name', name: 'name' }
-      - { label: 'Slug', name: 'slug', pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Cannot contain spaces, capital letters, or special characters. You may separate words with dashes and numbers are allowed."], hint: "This will be used in the URL." }
-  - name: 'blog'
-    label: 'Blog'
-    format: 'json'
-    folder: 'assets/content/blog'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     editor:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Featured Image', name: 'featured image', widget: 'image', required: false }
-      - label: 'Category'
-        name: 'blog_category'
-        widget: 'relation'
-        collection: 'blog_categories'
-        searchFields: ['slug']
-        valueField: 'name'
-        displayFields: ['slug']
-        multiple: false
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'gaming_posts'
-    label: 'Gaming'
+
+  - name: 'blog_gamedev'
+    label: 'Game Dev Blog'
     format: 'json'
-    folder: 'assets/content/blog'
-    filter: { field: 'blog_category', value: 'gaming' }
+    folder: 'assets/content/blog/gamedev'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Featured Image', name: 'featured image', widget: 'image', required: false }
-      - label: 'Category'
-        name: 'blog_category'
-        widget: 'relation'
-        collection: 'blog_categories'
-        searchFields: ['slug']
-        valueField: 'name'
-        displayFields: ['slug']
-        multiple: false
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'pages'
-    label: 'Pages'
+
+  - name: 'about_pages'
+    label: 'About Page'
+    format: 'json'
     files:
-      - label: 'About Page'
-        name: "about"
-        file: "site/content/about.yml"
+      - label: 'Profile Page'
+        name: "about_profile"
+        file: "assets/content/pages/about/profile.json"
         fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
-          - label: Team
-            name: team
+          - { label: Portrait, name: portrait, widget: image }
+          - { label: Content, name: content, widget: markdown }
+          - { label: Icon, name: icon, required: false }
+      - label: 'Skills Page'
+        name: "about_skills"
+        file: "assets/content/pages/about/skills.json"
+        fields:
+          - label: Categories
+            name: categories
             widget: list
             fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Position, name: position, widget: string}
-              - {label: Photo, name: photo, widget: image}
+              - { label: Name, name: name, widget: string }
+              - label: Subcategories
+                name: subcategories
+                widget: list
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Icon, name: icon, widget: image }
+                  - { label: Overview, name: overview, widget: markdown }
+                  - { label: Examples, name: examples, widget: markdown }
+          - { label: Icon, name: icon, required: false }
+      - label: 'Education Page'
+        name: "about_education"
+        file: "assets/content/pages/about/education.json"
+        fields:
+          - label: Institutions
+            name: institutions
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Logo, name: logo, widget: image }
+              - { label: Banner, name: banner, widget: image, required: false }
+              - { label: Content, name: content, widget: markdown }
+          - { label: Icon, name: icon, required: false }
+
+  - name: 'project_pages'
+    label: 'Project Page'
+    format: 'json'
+    slug: '{{slug}}'
+    create: true
+    folder: 'assets/content/pages/projects/'
+    fields:
+        - label: gallery
+          name: gallery
+          widget: list
+          field: { label: Image, name: image, widget: image }
+        - { label: Content, name: content, widget: markdown }
+        - label: Meta
+          name: meta
+          required: false
+          widget: list
+          fields:
+            - { label: Key, name: key, widget: string }
+            - { label: Value, name: value, widget: string }

@@ -1,0 +1,25 @@
+// Site wide variables. To be overridden in themes.
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Used on interactable elements, from most important to least.
+$primary-color: #DBAB00 !default;
+$secondary-color: #9B1111 !default;
+$tiertary-color: #181025 !default;
+
+$error: #ca2b2b !default;
+$warning: #FFBF00 !default;
+$success: green !default;
+
+// Website wide default styling.
+$font-color: $primary-color !default;
+$shadow-color: $secondary-color !default;
+$background-color: $tiertary-color !default;
+$link-color: $secondary-color;
+$font-family: 'PT Mono', sans-serif !default;
+$font-size: 16px !default;
+$border-color: #666 !default;
+
+// Default parameters for layout.
+$spacing: 1rem !default;

@@ -1,0 +1,16 @@
+// Generic styling.
+
+html {
+    font-size: $font-size;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: $font-color;
+}
+
+// Everything that is displayable should be within the current viewport. Scroll everything else.
+body {
+    overflow: auto;
+}
