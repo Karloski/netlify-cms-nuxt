@@ -13,14 +13,14 @@ export async function getContent ({ context, path }) {
     const slug = await context.keys()[index].replace(/^.\/|.json$/g, '')
 
     // FIXME: Nuxt cannot resolve links this way.
-    const entry = await require(`${path}/${slug}.json`)
+    const entry = await require(`@/${path}/${slug}.json`)
 
     // Add the slug to the post object
     Object.assign(entry, { slug })
 
     content.push({
       slug,
-      title: entry.title
+      ...entry
     })
   }
 

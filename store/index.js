@@ -15,8 +15,8 @@ export const mutations = {
 export const actions = {
   async GET_PROJECTS ({ commit }) {
     const context = await require.context('@/assets/content/pages/projects/', false, /\.json$/)
-    const posts = await getContent({ context, path: '/assets/content/pages/projects' })
-    commit('SET_POSTS', posts)
+    const posts = await getContent({ context, path: 'assets/content/pages/projects' })
+    commit('SET_PROJECTS', posts)
   },
 
   async nuxtServerInit ({ dispatch }) {
