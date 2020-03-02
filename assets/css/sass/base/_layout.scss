@@ -1,0 +1,71 @@
+.background {
+  &-primary {
+      background-color: $primary-color;
+
+      &.background-darkened {
+          background-color: adjust-color($color: $primary-color, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: -0.1);
+      }
+  }
+
+  &-secondary {
+      background-color: $secondary-color;
+
+      &.background-darkened {
+          background-color: adjust-color($color: $secondary-color, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: -0.1);
+      }
+  }
+
+  &-tiertary {
+      background-color: $tiertary-color;
+
+      &.background-darkened {
+          background-color: adjust-color($color: $tiertary-color, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: -0.1);
+      }
+  }
+}
+
+.triangle {
+  > * {
+    border: 1px solid;
+    position: relative;
+    width: 50px;
+
+    &:first-child {
+      transform: rotate(45deg);
+      left: 7.5px;
+    }
+
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+      right: 7.5px;
+    }
+  }
+
+  &.triangle-s {
+    > * {
+      width: 40px;
+
+      &:first-child {
+        left: 6px;
+      }
+
+      &:nth-child(2) {
+        right: 6px;
+      }
+    }
+  }
+
+  &.triangle-xs {
+    > * {
+      width: 30px;
+
+      &:first-child {
+        left: 4.5px;
+      }
+
+      &:nth-child(2) {
+        right: 4.5px;
+      }
+    }
+  }
+}

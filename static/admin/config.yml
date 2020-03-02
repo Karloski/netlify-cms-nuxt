@@ -131,8 +131,9 @@ collections:
     create: true
     folder: 'assets/content/pages/projects/'
     fields:
-        - label: gallery
-          name: gallery
+        - { label: Title, name: title, widget: string }
+        - label: Images
+          name: images
           widget: list
           field: { label: Image, name: image, widget: image }
         - { label: Content, name: content, widget: markdown }

@@ -16,7 +16,7 @@
         </h2>
       </nav>
     </div>
-    <div class="content background-tiertary background-darkened rounded my-4">
+    <div class="content flex flex-auto background-tiertary background-darkened rounded my-4">
       <nuxt class="p-4" />
     </div>
     <div class="footer -mx-4">
@@ -47,7 +47,6 @@ export default {
     .content {
       box-shadow: 0px 0px 5px 10px #3D275E;
       width: 70%;
-      flex: 1;
     }
   }
 </style>
