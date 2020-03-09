@@ -1,23 +1,29 @@
 <template>
-  <div class="projection flex flex-col w-screen h-screen p-4">
+  <div class="projection flex flex-col w-screen h-screen p-8">
     <div class="header flex justify-between items-center">
       <h1 class="title">
         carlwithak
       </h1>
       <nav class="inline-flex -mx-4">
         <h2 class="px-4">
-          Projects
+          <nuxt-link to="projects">
+            Projects
+          </nuxt-link>
         </h2>
         <h2 class="px-4">
-          About
+          <nuxt-link to="about">
+            About
+          </nuxt-link>
         </h2>
         <h2 class="px-4">
-          Blog
+          <nuxt-link to="blog">
+            Blog
+          </nuxt-link>
         </h2>
       </nav>
     </div>
-    <div class="content flex flex-auto background-tiertary background-darkened rounded my-4">
-      <nuxt class="p-4" />
+    <div class="content flex flex-auto background-tiertary background-darkened rounded my-8 overflow-auto">
+      <nuxt class="p-8" />
     </div>
     <div class="footer -mx-4">
       <span class="px-4">FB</span>

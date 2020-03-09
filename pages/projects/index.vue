@@ -1,19 +1,21 @@
 <template>
-  <div class="flex flex-col flex-auto">
-    <h1 class="text-center">
+  <div class="flex flex-col flex-auto -my-4">
+    <h1 class="text-center py-4">
       My Projects
     </h1>
-    <div class="flex flex-col flex-auto justify-center items-center">
+    <div class="flex flex-col flex-auto justify-center items-center -my-4 py-4">
       <transition-group name="list" tag="div">
-        <div class="flex justify-between" v-for="project in projects" :key="project.title">
-          <img :src="project.images[0]" :alt="project.title">
-          <p>{{ excerpt(project.content) }} Read More...</p>
+        <div class="flex justify-between -mx-4 py-4" v-for="project in projects" :key="project.title">
+          <img class="max-w-lg px-4" :src="project.images[0]" :alt="project.title">
+          <div class="flex-auto px-4">
+            <p>{{ excerpt(project.content, 300) }} Read More...</p>
+          </div>
         </div>
       </transition-group>
     </div>
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center py-4">
       <div class="flex flex-col items-center -my-3 cursor-pointer" @click="page--">
-        <div class="flex flex-col py-3 -my-1">
+        <div class="flex flex-col py-3 -my-1 transform rotate-180">
           <div class="flex justify-center triangle triangle-xs py-1">
             <div class="opacity-25"></div>
             <div class="opacity-25"></div>
@@ -66,8 +68,8 @@ export default {
     }
   },
   methods: {
-    excerpt: (blurb) => {
-      return createExcerpt({ text: blurb })
+    excerpt: (text, length = 150) => {
+      return createExcerpt({ text, length })
     }
   },
   computed: {
