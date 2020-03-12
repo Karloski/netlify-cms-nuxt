@@ -53,30 +53,23 @@ collections:
               - { label: Icon, name: icon, widget: image, default: '/static/img/icon.svg' }
               - { label: slug, name: slug, widget: string }
 
-  - name: 'blog_gaming'
-    label: 'Gaming Blog'
-    format: 'json'
-    folder: 'assets/content/blog/gaming'
+  - name: 'blog'
+    label: 'Blog'
+    format: json
+    folder: assets/content/blog
     create: true
-    slug: '{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Featured Image', name: 'featured image', widget: 'image', required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-
-  - name: 'blog_gamedev'
-    label: 'Game Dev Blog'
-    format: 'json'
-    folder: 'assets/content/blog/gamedev'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: true
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - label: 'Categories'
+        name: 'category'
+        widget: 'relation'
+        collection: 'settings'
+        searchFields: ['settings.blog']
+        valueField: 'settings.blog.name'
+        displayFields: ['settings.blog']
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Featured Image', name: 'featured image', widget: 'image', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }

@@ -18,9 +18,13 @@ export const actions = {
     const posts = await getContent({ context, path: 'assets/content/pages/projects' })
     commit('SET_PROJECTS', posts)
   },
-
+  async GET_POSTS ({ commit }) {
+    const context = await require.context('@/assets/content/pages/projects/', false, /\.json$/)
+    const posts = await getContent({ context, path: 'assets/content/pages/projects' })
+    commit('SET_PROJECTS', posts)
+  },
   async nuxtServerInit ({ dispatch }) {
-    await Promise.all([dispatch('GET_PROJECTS')])
+    await Promise.all([dispatch('GET_PROJECTS'), dispatch('GET_POSTS')])
   }
 }
 

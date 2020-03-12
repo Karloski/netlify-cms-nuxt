@@ -54,5 +54,25 @@ export default {
       box-shadow: 0px 0px 5px 10px #3D275E;
       width: 70%;
     }
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #290C43;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #623589;
+    }
   }
 </style>

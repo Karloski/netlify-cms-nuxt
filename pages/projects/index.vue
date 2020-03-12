@@ -14,26 +14,7 @@
       </transition-group>
     </div>
     <div class="flex justify-center items-center py-4">
-      <div class="flex flex-col items-center -my-3 cursor-pointer" @click="page--">
-        <div class="flex flex-col py-3 -my-1 transform rotate-180">
-          <div class="flex justify-center triangle triangle-xs py-1">
-            <div class="opacity-25"></div>
-            <div class="opacity-25"></div>
-          </div>
-          <div class="flex justify-center triangle triangle-s py-1">
-            <div class="opacity-50"></div>
-            <div class="opacity-50"></div>
-          </div>
-          <div class="flex justify-center triangle py-1">
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-        <div class="py-3">
-          Previous
-        </div>
-      </div>
-      <div class="flex flex-col items-center -my-3 cursor-pointer" @click="page++">
+      <div class="flex flex-col items-center -my-3 cursor-pointer" @click="more()">
         <div class="flex flex-col py-3 -my-1">
           <div class="flex justify-center triangle triangle-xs py-1">
             <div class="opacity-25"></div>
@@ -48,9 +29,6 @@
             <div></div>
           </div>
         </div>
-        <div class="py-3">
-          Next
-        </div>
       </div>
     </div>
   </div>
@@ -61,21 +39,28 @@ import { createExcerpt } from '@/common/util'
 
 export default {
   layout: 'projection',
-  data() {
+  data () {
     return {
-      page: 0,
-      pageLength: 2
+      count: 2
     }
   },
   methods: {
-    excerpt: (text, length = 150) => {
+    excerpt (text, length = 150) {
       return createExcerpt({ text, length })
+    },
+    more () {
+      if (this.count + 2 >= this.$store.state.projects.length) {
+        this.count = this.$store.state.projects.length
+      } else {
+        this.count += 2
+      }
     }
   },
   computed: {
-    projects: function () {
-      // return this.$store.state.projects
-      return this.$store.state.projects.slice(this.pageLength * this.page, this.pageLength * this.page + this.pageLength)
+    /* eslint object-shorthand: "off" */
+    projects () {
+      // FIXME: Lazy.
+      return this.$store.state.projects.slice(0, this.count)
     }
   }
 }
