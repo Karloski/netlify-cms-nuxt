@@ -10,6 +10,17 @@
           "examples": "Some examples"
         }
       ]
+    },
+    {
+      "name": "Frameworks",
+      "subcategories": [
+        {
+          "name": "Laravel",
+          "icon": "/img/laravel.svg",
+          "overview": "My experience with Laravel is a, b and most predominantly c.",
+          "examples": "An example of my work with Laravel is project A."
+        }
+      ]
     }
   ]
 }
