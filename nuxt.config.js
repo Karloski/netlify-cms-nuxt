@@ -50,6 +50,14 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    ['nuxt-fontawesome', {
+      imports: [
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['fas']
+        }
+      ]
+    }]
   ],
   /*
   ** Axios module configuration
@@ -65,6 +73,14 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/about',
+        redirect: '/about/profile'
+      })
     }
   }
 }

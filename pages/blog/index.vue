@@ -1,14 +1,14 @@
 <template>
   <div class="flex flex-col flex-auto -my-4">
     <h1 class="text-center py-4">
-      Blog
+      Latest Posts
     </h1>
-    <div class="flex flex-col flex-auto justify-center items-center -my-4 py-4">
-      <transition-group name="list" tag="div">
-        <div class="flex justify-between -mx-4 py-4" v-for="project in projects" :key="project.title">
-          <img class="max-w-lg px-4" :src="project.images[0]" :alt="project.title">
+    <div class="flex flex-col flex-auto justify-center -my-4 py-4">
+      <transition-group name="list" tag="div" class="w-full">
+        <div v-for="post in posts" :key="post.title" class="flex -mx-4 py-4">
+          <img class="max-w-lg px-4" :src="post.featured_image" :alt="post.title">
           <div class="flex-auto px-4">
-            <p>{{ excerpt(project.content, 300) }} Read More...</p>
+            <p>{{ excerpt(post.body, 300) }} Read More...</p>
           </div>
         </div>
       </transition-group>
@@ -17,16 +17,16 @@
       <div class="flex flex-col items-center -my-3 cursor-pointer" @click="more()">
         <div class="flex flex-col py-3 -my-1">
           <div class="flex justify-center triangle triangle-xs py-1">
-            <div class="opacity-25"></div>
-            <div class="opacity-25"></div>
+            <div class="opacity-25" />
+            <div class="opacity-25" />
           </div>
           <div class="flex justify-center triangle triangle-s py-1">
-            <div class="opacity-50"></div>
-            <div class="opacity-50"></div>
+            <div class="opacity-50" />
+            <div class="opacity-50" />
           </div>
           <div class="flex justify-center triangle py-1">
-            <div></div>
-            <div></div>
+            <div />
+            <div />
           </div>
         </div>
       </div>
@@ -44,23 +44,22 @@ export default {
       count: 2
     }
   },
+  computed: {
+    posts () {
+      // FIXME: Lazy.
+      return this.$store.state.posts.slice().sort((a, b) => a.date > b.date ? -1 : a.date < b.date ? 1 : 0).slice(0, this.count)
+    }
+  },
   methods: {
     excerpt (text, length = 150) {
       return createExcerpt({ text, length })
     },
     more () {
-      if (this.count + 2 >= this.$store.state.projects.length) {
-        this.count = this.$store.state.projects.length
+      if (this.count + 2 >= this.$store.state.posts.length) {
+        this.count = this.$store.state.posts.length
       } else {
         this.count += 2
       }
-    }
-  },
-  computed: {
-    /* eslint object-shorthand: "off" */
-    projects () {
-      // FIXME: Lazy.
-      return this.$store.state.projects.slice(0, this.count)
     }
   }
 }

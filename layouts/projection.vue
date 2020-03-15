@@ -6,17 +6,17 @@
       </h1>
       <nav class="inline-flex -mx-4">
         <h2 class="px-4">
-          <nuxt-link to="projects">
+          <nuxt-link to="/projects">
             Projects
           </nuxt-link>
         </h2>
         <h2 class="px-4">
-          <nuxt-link to="about">
+          <nuxt-link to="/about">
             About
           </nuxt-link>
         </h2>
         <h2 class="px-4">
-          <nuxt-link to="blog">
+          <nuxt-link to="/blog">
             Blog
           </nuxt-link>
         </h2>
@@ -50,29 +50,38 @@ export default {
   }
 
   .projection {
+    transition: 0.2s all;
+
     .content {
       box-shadow: 0px 0px 5px 10px #3D275E;
       width: 70%;
-    }
+      transition: 0.2s all;
 
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
+      /* width */
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
 
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
 
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #290C43;
-    }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
 
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: #623589;
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #290C43;
+      }
+
+      &:hover {
+        &::-webkit-scrollbar-thumb {
+          background: #623589
+        }
+      }
     }
   }
 </style>
