@@ -78,3 +78,9 @@ img {
     height: 32px;
   }
 }
+
+.border {
+  &-primary {
+    border-color: $primary-color;
+  }
+}
