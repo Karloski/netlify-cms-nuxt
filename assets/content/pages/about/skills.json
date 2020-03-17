@@ -18,7 +18,7 @@
           "name": "Laravel",
           "icon": "/img/laravel.svg",
           "overview": "My experience with Laravel is a, b and most predominantly c.",
-          "examples": "An example of my work with Laravel is project A.\n\nSee this image as an example of this: ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 1\")"
+          "examples": "An example of my work with Laravel is project A."
         }
       ]
     }
