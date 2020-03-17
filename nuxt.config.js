@@ -57,8 +57,12 @@ export default {
           icons: ['fas']
         }
       ]
-    }]
+    }],
+    '@nuxtjs/markdownit',
   ],
+  markdownit: {
+    injected: true
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

@@ -74,4 +74,8 @@ export default {
   opacity: 0;
   transform: translateY(30px);
 }
+
+img {
+  width: 100%;
+}
 </style>
