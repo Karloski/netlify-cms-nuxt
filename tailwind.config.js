@@ -6,12 +6,33 @@
 */
 module.exports = {
   theme: {
-    theme: {
-      zIndex: {
-       '-10': '-10',
+    screens: {
+      'sm': {'max': '639px'},
+      // => @media (max-width: 639px) { ... }
+
+      'md': {'max': '767px'},
+      // => @media (max-width: 767px) { ... }
+
+      'lg': {'max': '1023px'},
+      // => @media (max-width: 1023px) { ... }
+
+      'xl': {'max': '1279px'},
+      // => @media (max-width: 1279px) { ... }
+    },
+    backgroundColor: theme => ({
+      ...theme('colors'),
+      'primary': '#DBAB00',
+      'secondary': '#9B1111',
+      'tiertary': '#181025',
+    }),
+    extend: {
+      'width': {
+        '7/10': '70%'
       }
     }
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive']
+  },
   plugins: []
 }

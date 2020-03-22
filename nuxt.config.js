@@ -23,12 +23,17 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/node_modules/github-markdown-css/github-markdown.css',
     '@/assets/css/sass/app.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {
+      src: '@/plugins/slide-menu',
+      ssr: false
+    }
   ],
   /*
   ** Nuxt.js dev-modules

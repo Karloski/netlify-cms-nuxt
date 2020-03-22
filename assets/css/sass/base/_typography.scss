@@ -33,3 +33,13 @@ h2 {
 h3 {
     font-size: large;
 }
+
+p {
+    a {
+        transition: 0.5s all;
+
+        &:hover {
+            text-shadow: 3px 3px 3px $secondary-color;
+        }
+    }
+}

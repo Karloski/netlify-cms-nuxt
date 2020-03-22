@@ -48,9 +48,12 @@ import CategoryMenu from '@/components/CategoryMenu'
 
 export default {
   layout: 'projection',
+  components: {
+    CategoryMenu
+  },
   async asyncData ({ context }) {
     const data = await require('@/assets/content/pages/about/skills.json')
-    let menu = await require.context('@/assets/content/pages/about/', false, /\.json$/).keys().reduce((carry, name) => {
+    const menu = await require.context('@/assets/content/pages/about/', false, /\.json$/).keys().reduce((carry, name) => {
       name = /\.\/(.*)\.json/.exec(name)[1]
 
       carry.push({
@@ -72,9 +75,6 @@ export default {
       selectedCategory: 0,
       selectedSubcat: 0
     }
-  },
-  components: {
-    CategoryMenu
   },
   computed: {
     shownCategory () {

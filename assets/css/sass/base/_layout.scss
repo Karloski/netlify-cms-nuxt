@@ -71,6 +71,8 @@
 }
 
 img {
+  object-fit: cover;
+
   &.icon {
     width: 32px;
     height: 32px;
@@ -80,5 +82,47 @@ img {
 .border {
   &-primary {
     border-color: $primary-color;
+  }
+}
+
+.hover\: {
+  &background-tiertiary {
+    &:hover {
+      background-color: $tiertary-color;
+    }
+  }
+
+  &mask:hover {
+    background-color: adjust-color($color: $tiertary-color, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: -0.1);
+
+    > * {
+      opacity: 0.5;
+    }
+  }
+
+  &border-primary:hover {
+    border: 1px solid $primary-color;
+  }
+}
+
+.mask {
+  > * {
+    opacity: 0.5;
+  }
+
+  &-light {
+    opacity: 0.75;
+  }
+}
+
+.text-shadow {
+  &-darkened  {
+    text-shadow: 5px 5px 5px black;
+  }
+}
+
+.self {
+  &-baseline {
+    align-self: baseline;
   }
 }

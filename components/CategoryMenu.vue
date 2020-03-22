@@ -66,8 +66,6 @@ export default {
 <style lang="scss" scoped>
 .categories {
   &-active {
-    background: #181025;
-
     .categories-icon {
       border: 1px solid;
       border-bottom-color: #181025;
@@ -75,6 +73,7 @@ export default {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       z-index: 1;
+      background: #181025;
     }
 
     .categories-menu {
@@ -83,6 +82,7 @@ export default {
       border: 1px solid;
       border-radius: 1rem;
       border-top-right-radius: 0;
+      background: #181025;
     }
   }
 

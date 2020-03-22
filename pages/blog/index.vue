@@ -6,14 +6,26 @@
     <div class="flex flex-col flex-auto justify-center -my-4 py-4">
       <transition-group name="list" tag="div" class="w-full">
         <div v-for="post in posts" :key="post.title" class="flex -mx-4 py-4">
-          <img class="max-w-lg px-4" :src="post.featured_image" :alt="post.title">
-          <div class="flex-auto px-4">
-            <p>{{ excerpt(post.body, 300) }} Read More...</p>
+          <nuxt-link :to="`/blog/${post.slug}`" class="hover:background-tiertiary hover:mask">
+            <img class="max-w-lg px-4 transition duration-700 h-64 w-full" :src="post.featured_image" :alt="post.title">
+          </nuxt-link>
+          <div class="flex-auto px-4 -my-4">
+            <h4 class="py-4">
+              {{ post.title }}
+            </h4>
+            <p class="py-4">
+              {{ excerpt(post.body, 300) }}
+            </p>
+            <p class="py-4">
+              <nuxt-link :to="`/blog/${post.slug}`">
+                Read More...
+              </nuxt-link>
+            </p>
           </div>
         </div>
       </transition-group>
     </div>
-    <div class="flex justify-center items-center py-4">
+    <div class="flex justify-center items-center pt-4 pb-8">
       <div class="flex flex-col items-center -my-3 cursor-pointer" @click="more()">
         <div class="flex flex-col py-3 -my-1">
           <div class="flex justify-center triangle triangle-xs py-1">
@@ -72,9 +84,5 @@ export default {
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(30px);
-}
-
-img {
-  width: 100%;
 }
 </style>
