@@ -5,11 +5,11 @@
     </h1>
     <div class="flex flex-col flex-auto justify-center -my-4 py-4">
       <transition-group name="list" tag="div" class="w-full">
-        <div v-for="post in posts" :key="post.title" class="flex -mx-4 py-4">
+        <div v-for="post in posts" :key="post.title" class="flex md:flex-col -mx-4 py-4">
           <nuxt-link :to="`/blog/${post.slug}`" class="hover:background-tiertiary hover:mask">
-            <img class="max-w-lg px-4 transition duration-700 h-64 w-full" :src="post.featured_image" :alt="post.title">
+            <img class="max-w-lg px-4 transition duration-700 h-64 w-full md:py-4" :src="post.featured_image" :alt="post.title">
           </nuxt-link>
-          <div class="flex-auto px-4 -my-4">
+          <div class="flex-auto md:text-center px-4 -my-4">
             <h4 class="py-4">
               {{ post.title }}
             </h4>

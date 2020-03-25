@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-col flex-auto -my-4 relative">
-    <div class="relative text-center py-4">
+  <div class="flex flex-col flex-auto -my-4 relative md:static">
+    <div class="relative text-center py-4 md:static">
       <h1>
         Skills
       </h1>
-      <CategoryMenu :menu="menu" class="absolute top-0 right-0" />
+      <CategoryMenu :menu="menu" class="absolute top-0 right-0 md:transform md:scale-75" />
     </div>
     <div class="flex flex-auto -mx-4">
       <div class="flex flex-col flex-auto -my-2">
@@ -100,3 +100,24 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.2s ease;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(-100%);
+  transition: all 150ms ease-in 0s
+}
+
+// FIXME: Temporary solution i.e., permanent solution
+@media all and (max-width: 767px) {
+  .categories-active {
+    top: -1.25rem;
+    right: -1.25rem;
+  }
+}
+</style>

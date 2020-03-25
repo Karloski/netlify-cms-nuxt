@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-auto justify-center items-center relative">
-      <h1 class="absolute top-0 left-0 inline-flex flex-col text-center">
+      <h1 class="title absolute top-0 left-0 inline-flex flex-col text-center">
         <span>carl</span>
         <span>withak</span>
       </h1>
@@ -36,5 +36,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  h1 {
+    &.title {
+      @media all and (max-width: 767px) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
 </style>

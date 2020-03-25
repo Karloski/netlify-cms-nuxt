@@ -8,7 +8,7 @@
         {{ title }}
       </h2>
     </div>
-    <div class="markdown-body" v-html="$md.render(content)" />
+    <div class="markdown-body md:text-center" v-html="$md.render(content)" />
   </div>
 </template>
 

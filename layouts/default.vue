@@ -1,6 +1,6 @@
 <template>
   <div>
-    <video class="w-screen fixed" src="/img/background.mp4" autoplay loop />
+    <video class="w-screen fixed xl:h-screen xl:w-auto object-cover" src="/img/background.mp4" autoplay loop />
     <nuxt class="flex w-screen h-screen p-8" />
   </div>
 </template>
