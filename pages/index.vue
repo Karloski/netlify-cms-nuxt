@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-auto justify-center items-center relative">
+    <div class="home-container flex lg:flex-col flex-auto justify-center items-center relative">
       <h1 class="title absolute top-0 left-0 inline-flex flex-col text-center">
         <span>carl</span>
         <span>withak</span>
@@ -37,11 +37,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  h1 {
-    &.title {
-      @media all and (max-width: 767px) {
-        left: 50%;
-        transform: translateX(-50%);
+  .home {
+    &-container {
+      @media (orientation: landscape) and (max-width: 1023px) {
+        justify-content: space-between;
+      }
+
+      .title {
+        @media all and (max-width: 767px) {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @media (orientation: landscape) and (max-width: 1023px) {
+          flex-direction: row;
+          position: relative;
+          width: 100%;
+          justify-content: center;
+          padding-bottom: 1rem;
+        }
       }
     }
   }

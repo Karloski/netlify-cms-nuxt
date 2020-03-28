@@ -16,11 +16,6 @@ export default {
     return {
       active: false
     }
-  },
-  methods: {
-    onBurgerClick () {
-      console.log('Clicked!')
-    }
   }
 }
 </script>

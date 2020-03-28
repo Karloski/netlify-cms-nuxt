@@ -126,3 +126,18 @@ img {
     align-self: baseline;
   }
 }
+
+.absolute {
+  &-center {
+    &-x {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.rounded {
+  &-xxl {
+    border-radius: 2rem;
+  }
+}

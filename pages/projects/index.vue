@@ -25,7 +25,7 @@
         </div>
       </transition-group>
     </div>
-    <div class="flex justify-center items-center pt-4 pb-8">
+    <div v-if="projects.length < $store.state.projects.length" class="flex justify-center items-center pt-4 pb-8">
       <div class="flex flex-col items-center -my-3 cursor-pointer" @click="more()">
         <div class="flex flex-col py-3 -my-1">
           <div class="flex justify-center triangle triangle-xs py-1">

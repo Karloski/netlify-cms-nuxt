@@ -3,7 +3,7 @@
     <h1 class="text-center py-4">
       Latest Posts
     </h1>
-    <div class="flex flex-col flex-auto justify-center -my-4 py-4">
+    <div v-if="posts.length" class="flex flex-col flex-auto justify-center -my-4 py-4">
       <transition-group name="list" tag="div" class="w-full">
         <div v-for="post in posts" :key="post.title" class="flex md:flex-col -mx-4 py-4">
           <nuxt-link :to="`/blog/${post.slug}`" class="hover:background-tiertiary hover:mask">
@@ -25,7 +25,10 @@
         </div>
       </transition-group>
     </div>
-    <div class="flex justify-center items-center pt-4 pb-8">
+    <div v-else class="flex flex-auto items-center justify-center">
+      <span class="h3">There is nothing here! Come back when I've written something.</span>
+    </div>
+    <div v-if="posts.length < $store.state.posts.length - 1" class="flex justify-center items-center pt-4 pb-8">
       <div class="flex flex-col items-center -my-3 cursor-pointer" @click="more()">
         <div class="flex flex-col py-3 -my-1">
           <div class="flex justify-center triangle triangle-xs py-1">

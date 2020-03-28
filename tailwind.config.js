@@ -28,6 +28,10 @@ module.exports = {
     extend: {
       'width': {
         '7/10': '70%'
+      },
+      screens: {
+        'portrait': {'raw': '(orientation: portrait)'},
+        'landscape': {'raw': '(orientation: landscape)'},
       }
     }
   },

@@ -12,13 +12,13 @@ body {
     font-family: 'PT Mono', monospace;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'PressStart2P', monospace;
     color: $font-color;
     text-shadow: 5px 5px 5px $shadow-color;
 }
 
-h1 {
+h1, .h1 {
     font-size: xx-large;
 
     &.title {
@@ -26,11 +26,11 @@ h1 {
     }
 }
 
-h2 {
+h2, .h2 {
     font-size: x-large;
 }
 
-h3 {
+h3, .h3 {
     font-size: large;
 }
 

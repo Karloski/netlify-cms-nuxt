@@ -41,6 +41,7 @@ export default {
     top: 0;
     left: 0;
     cursor: pointer;
+    z-index: 998;
   }
 
   .sidebar-panel {

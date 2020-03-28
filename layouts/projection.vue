@@ -66,7 +66,7 @@
       <span class="px-4">Twitter</span>
       <span class="px-4">Github</span>
     </div>
-    <video class="fixed top-0 left-0 w-screen xl:h-screen xl:w-auto object-cover" src="/img/background.mp4" autoplay loop />
+    <video class="fixed top-0 left-0 w-screen h-screen object-cover object-top" src="/img/background.mp4" autoplay loop />
   </div>
 </template>
 

@@ -65,6 +65,8 @@ export default {
 
 <style lang="scss" scoped>
 .categories {
+  z-index: 997;
+
   &-active {
     .categories-icon {
       border: 1px solid;
