@@ -4,7 +4,6 @@
       <h1>
         Skills
       </h1>
-      <CategoryMenu :menu="menu" class="absolute top-0 right-0 md:transform md:scale-75" />
     </div>
     <div class="flex flex-auto -mx-4">
       <div class="flex flex-col flex-auto -my-2">
@@ -44,13 +43,8 @@
 </template>
 
 <script>
-import CategoryMenu from '@/components/CategoryMenu'
-
 export default {
   layout: 'projection',
-  components: {
-    CategoryMenu
-  },
   async asyncData ({ context }) {
     const data = await require('@/assets/content/pages/about/skills.json')
     const menu = await require.context('@/assets/content/pages/about/', false, /\.json$/).keys().reduce((carry, name) => {
@@ -111,13 +105,5 @@ export default {
 .slide-leave-to {
   transform: translateX(-100%);
   transition: all 150ms ease-in 0s
-}
-
-// FIXME: Temporary solution i.e., permanent solution
-@media all and (max-width: 767px) {
-  .categories-active {
-    top: -1.25rem;
-    right: -1.25rem;
-  }
 }
 </style>

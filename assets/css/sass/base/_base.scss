@@ -13,4 +13,6 @@ html {
 // Everything that is displayable should be within the current viewport. Scroll everything else.
 body {
     overflow: auto;
+    background: url(/img/background.gif) no-repeat;
+    background-size: cover;
 }

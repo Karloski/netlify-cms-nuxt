@@ -4,7 +4,9 @@ import { getContent } from '../common/util'
 // Initial State
 export const appState = {
   projects: [],
-  posts: []
+  posts: [],
+  structure: [],
+  hello: 'there'
 }
 
 export const mutations = {
@@ -13,6 +15,9 @@ export const mutations = {
   },
   SET_POSTS: (state, payload) => {
     Vue.set(state, 'posts', payload)
+  },
+  SET_STRUCTURE: (state, payload) => {
+    Vue.set(state, 'structure', payload)
   }
 }
 
@@ -27,8 +32,27 @@ export const actions = {
     const posts = await getContent({ context, path: 'assets/content/blog' })
     commit('SET_POSTS', posts)
   },
+  async GET_STRUCTURE ({ commit }) {
+    const blog = await require('@/assets/content/settings/blog')
+
+    commit('SET_STRUCTURE', {
+      projects: {},
+      about: {
+        education: '',
+        profile: '',
+        skills: ''
+      },
+      blog: {
+        ...blog.categories.reduce((carry, current) => {
+          carry.push(current.name)
+
+          return carry
+        }, [])
+      }
+    })
+  },
   async nuxtServerInit ({ dispatch }) {
-    await Promise.all([dispatch('GET_PROJECTS'), dispatch('GET_POSTS')])
+    await Promise.all([dispatch('GET_PROJECTS'), dispatch('GET_POSTS'), dispatch('GET_STRUCTURE')])
   }
 }
 
