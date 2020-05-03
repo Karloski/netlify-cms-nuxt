@@ -44,6 +44,10 @@
 
 <script>
 export default {
+  transition: {
+    name: 'slide',
+    mode: 'out-in'
+  },
   layout: 'projection',
   async asyncData ({ context }) {
     const data = await require('@/assets/content/pages/about/skills.json')
@@ -94,16 +98,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  transition: transform 0.2s ease;
-}
-
-.slide-enter,
-.slide-leave-to {
-  transform: translateX(-100%);
-  transition: all 150ms ease-in 0s
-}
-</style>

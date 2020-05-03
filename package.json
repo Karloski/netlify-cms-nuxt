@@ -17,6 +17,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/markdownit": "^1.2.9",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "animate.css": "^3.7.2",
     "github-markdown-css": "^4.0.0",
     "nuxt": "^2.12.2",
     "nuxt-fontawesome": "^0.4.0"

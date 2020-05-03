@@ -7,17 +7,17 @@
       </h1>
       <nav class="-my-4 text-center">
         <h1 class="py-4">
-          <nuxt-link to="projects">
+          <nuxt-link ref="projects" to="projects">
             Projects
           </nuxt-link>
         </h1>
         <h1 class="py-4">
-          <nuxt-link to="about/profile">
+          <nuxt-link ref="about-profile" to="about/profile">
             About
           </nuxt-link>
         </h1>
         <h1 class="py-4">
-          <nuxt-link to="blog">
+          <nuxt-link ref="blog" to="blog">
             Blog
           </nuxt-link>
         </h1>
@@ -32,6 +32,11 @@ export default {
     return {
       // script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }]
     }
+  },
+  beforeRouteLeave (to, from, next) {
+    this.animateCss(this.$refs[to.name].$el, 'flash').then(() => {
+      next()
+    })
   }
 }
 </script>

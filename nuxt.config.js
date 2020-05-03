@@ -24,12 +24,14 @@ export default {
   */
   css: [
     '@/node_modules/github-markdown-css/github-markdown.css',
+    '@/node_modules/animate.css/animate.min.css',
     '@/assets/css/sass/app.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/animateCss'
   ],
   /*
   ** Nuxt.js dev-modules

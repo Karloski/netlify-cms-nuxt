@@ -25,6 +25,10 @@
 
 <script>
 export default {
+  transition: {
+    name: 'slide',
+    mode: 'out-in'
+  },
   layout: 'projection',
   async asyncData ({ context }) {
     const data = await require('@/assets/content/pages/about/education.json')

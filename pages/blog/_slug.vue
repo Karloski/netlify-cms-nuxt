@@ -31,6 +31,10 @@
 
 <script>
 export default {
+  transition: {
+    name: 'slide',
+    mode: 'out-in'
+  },
   layout: 'projection',
   asyncData ({ params }) {
     return require(`@/assets/content/blog/${params.slug}`)

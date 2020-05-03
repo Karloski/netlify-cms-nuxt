@@ -53,6 +53,10 @@
 import { createExcerpt } from '@/common/util'
 
 export default {
+  transition: {
+    name: 'slide',
+    mode: 'out-in'
+  },
   layout: 'projection',
   data () {
     return {

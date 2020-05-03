@@ -57,7 +57,6 @@
       <span class="px-4">Twitter</span>
       <span class="px-4">Github</span>
     </div>
-    <!-- <video class="fixed top-0 left-0 w-screen h-screen object-cover object-top" src="/img/background.mp4" autoplay loop /> -->
   </div>
 </template>
 
@@ -66,10 +65,6 @@ import Burger from '@/components/Burger'
 import Sidebar from '@/components/Sidebar'
 
 export default {
-  transition: {
-    name: 'fade',
-    mode: 'out-in'
-  },
   components: {
     Burger, Sidebar
   },
