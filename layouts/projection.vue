@@ -10,15 +10,23 @@
         </h2>
         <div class="flex flex-auto py-12">
           <div class="flex flex-col flex-auto items-center -my-4">
-            <h3 v-for="(children, page) of this.$store.state.structure" :key="page" class="py-4 capitalize" @click="show.sidebar = false">
-              <div v-if="Object.keys(children).length > 0">
+            <h3 v-for="(children, page) of nav.items" :key="page" class="py-4 capitalize">
+              <div v-if="Object.keys(children).length > 0" @click="nav.parent.items = nav.items; nav.parent.name = page; nav.items = children;">
                 <span>{{ page }}</span>
                 <span>></span>
               </div>
-              <nuxt-link v-else :to="`/${page}`">
-                {{ page }}
-              </nuxt-link>
+              <div v-else @click="show.sidebar = false">
+                <nuxt-link v-if="nav.parent.name" :to="`/${nav.parent.name}/${page.toLowerCase()}`">
+                  {{ page }}
+                </nuxt-link>
+                <nuxt-link v-else :to="`/${page.toLowerCase()}`">
+                  {{ page }}
+                </nuxt-link>
+              </div>
             </h3>
+            <div v-if="nav.parent.name" class="py-4" @click="nav.items = nav.parent.items; nav.parent = { items: {}, name: '' };">
+              <h3>Back</h3>
+            </div>
           </div>
         </div>
         <div class="footer flex justify-between">
@@ -36,7 +44,7 @@
       </h1>
       <nav class="inline-flex -mx-4">
         <h2 v-for="(children, page) of this.$store.state.structure" :key="page" class="px-4 capitalize" @mouseover="nav.selected = page">
-          <nuxt-link :to="`/${page}`">
+          <nuxt-link :to="`/${page.toLowerCase()}`">
             {{ page }}
           </nuxt-link>
         </h2>
@@ -44,7 +52,7 @@
       <transition name="slide-vert" mode="out-in">
         <div v-if="Object.keys(navSelection).length > 0" class="subnav absolute w-full transition ease-in duration-700 flex justify-end p-8 rounded-b-lg">
           <div v-for="(children, page) in navSelection" :key="page" class="mx-4 capitalize">
-            <nuxt-link :to="`/${nav.selected}/${page}`">
+            <nuxt-link :to="`/${nav.selected}/${page.toLowerCase()}`">
               <h3>{{ page }}</h3>
             </nuxt-link>
           </div>
@@ -76,7 +84,12 @@ export default {
         sidebar: false
       },
       nav: {
-        selected: ''
+        selected: '',
+        items: {},
+        parent: {
+          name: '',
+          items: {}
+        }
       }
     }
   },
@@ -87,6 +100,9 @@ export default {
       }
       return {}
     }
+  },
+  created () {
+    this.nav.items = this.$store.state.structure
   }
 }
 </script>

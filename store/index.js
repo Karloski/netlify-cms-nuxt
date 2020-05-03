@@ -38,16 +38,16 @@ export const actions = {
     commit('SET_STRUCTURE', {
       projects: {},
       about: {
-        education: '',
-        profile: '',
-        skills: ''
+        education: {},
+        profile: {},
+        skills: {}
       },
       blog: {
         ...blog.categories.reduce((carry, current) => {
-          carry.push(current.name)
+          carry[current.name] = {}
 
           return carry
-        }, [])
+        }, {})
       }
     })
   },
