@@ -41,13 +41,15 @@
           </nuxt-link>
         </h2>
       </nav>
-      <div v-if="Object.keys(navSelection).length > 0" class="subnav absolute w-full transition ease-in duration-700 flex justify-end p-8 rounded-b-lg">
-        <div v-for="(children, page) in navSelection" :key="page" class="mx-4 capitalize">
-          <nuxt-link :to="`/${nav.selected}/${page}`">
-            <h3>{{ page }}</h3>
-          </nuxt-link>
+      <transition name="slide-vert" mode="out-in">
+        <div v-if="Object.keys(navSelection).length > 0" class="subnav absolute w-full transition ease-in duration-700 flex justify-end p-8 rounded-b-lg">
+          <div v-for="(children, page) in navSelection" :key="page" class="mx-4 capitalize">
+            <nuxt-link :to="`/${nav.selected}/${page}`">
+              <h3>{{ page }}</h3>
+            </nuxt-link>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
     <div class="content flex flex-auto rounded my-8 overflow-auto w-7/10 xl:w-full">
       <nuxt class="p-8 md:px-4 md:py-0" />
