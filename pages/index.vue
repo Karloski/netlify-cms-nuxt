@@ -44,6 +44,11 @@ export default {
 <style lang="scss" scoped>
   .home {
     &-container {
+      nav h1 {
+        font-size: 2rem;
+        font-size: clamp(2rem, 5vw, 2.5rem);
+      }
+
       @media (orientation: landscape) and (max-width: 1023px) {
         justify-content: space-between;
       }
