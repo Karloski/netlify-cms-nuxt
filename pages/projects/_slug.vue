@@ -8,7 +8,18 @@
         {{ title }}
       </h2>
     </div>
-    <div class="markdown-body md:text-center py-4" v-html="$md.render(content)" />
+    <div class="about">
+      <h2>About this project</h2>
+      <div class="markdown-body md:text-center py-4" v-html="$md.render(about)" />
+    </div>
+    <div class="technical">
+      <h2>Technical Sheet</h2>
+      <div class="markdown-body md:text-center py-4" v-html="$md.render(technical)" />
+    </div>
+    <div v-if="resources && resources.length > 0" class="resources">
+      <h2>Resources</h2>
+      <div class="markdown-body md:text-center py-4" v-html="$md.render(resources)" />
+    </div>
     <div class="flex items-center relative py-4 my-4">
       <nuxt-link v-if="index > 0" :to="`/projects/${previous.slug}`" class="button flex items-center absolute left-0">
         <font-awesome-icon icon="chevron-left" />
