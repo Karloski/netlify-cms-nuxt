@@ -11,11 +11,11 @@
           </nuxt-link>
           <div class="flex-auto md:text-center px-4 -my-4">
             <h4 class="py-4">
-              {{ project.title }}
+              <nuxt-link :to="`/projects/${project.slug}`">
+                {{ project.title }}
+              </nuxt-link>
             </h4>
-            <p class="py-4">
-              {{ excerpt(project.content, 300) }}
-            </p>
+            <p class="markdown-body py-4" v-html="$md.render(excerpt(project.about, 300))" />
             <p class="py-4">
               <nuxt-link :to="`/projects/${project.slug}`">
                 Read More...

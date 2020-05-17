@@ -59,7 +59,11 @@ export default {
   },
   layout: 'projection',
   asyncData ({ params }) {
-    return require(`@/assets/content/pages/projects/${params.slug}`)
+    return {
+      url: '',
+      resources: '',
+      ...require(`@/assets/content/pages/projects/${params.slug}`)
+    }
   },
   data () {
     return {
