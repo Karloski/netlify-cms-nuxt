@@ -5,7 +5,12 @@
         <img class="rounded-lg object-cover h-64" :src="images[0]" :alt="title">
       </div>
       <h2 class="absolute bottom-0 left-0 p-4 text-shadow-darkened">
-        {{ title }}
+        <a v-if="url" :href="url" target="_blank">
+          {{ title }}
+        </a>
+        <span v-else>
+          {{ title }}
+        </span>
       </h2>
     </div>
     <div class="about">
