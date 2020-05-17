@@ -1,0 +1,9 @@
+{
+  "title": "MailBigFile",
+  "images": [
+    "/img/mailbigfile_home.jpg"
+  ],
+  "about": "MailBigFile is a file sending service, allowing users to send files to their friends and family that were otherwise too big for email. If you are aware of WeTransfer, then you will know exactly what MailBigFile does.\n\nWhile I did not create the original MailBigFile application, I have been actively maintaining and improving it for the last 5+ years.",
+  "technical": "* PHP\n* CSS\n* HTML\n* AWS\n   * EC2\n   * RDS\n   * Elastic Beanstalk\n   * PHP SDK (mainly their Multipart Upload solution)\n   * JavaScript SDK (for the Electron based app)\n   * Cognito\n* Electron\n* Uppy\n* Plupload",
+  "url": "https://www.mailbigfile.com"
+}
