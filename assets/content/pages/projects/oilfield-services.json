@@ -2,5 +2,8 @@
   "title": "Oilfield Services",
   "about": "A client website based on the Oil Field industry.",
   "technical": "* CSS\n* HTML\n* JavaScript\n* Server Administration",
-  "url": "http://oilfieldservices.dessol.com/"
+  "url": "http://oilfieldservices.dessol.com/",
+  "images": [
+    "/img/ofs.jpg"
+  ]
 }
