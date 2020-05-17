@@ -1,5 +1,18 @@
 .markdown-body {
     font-family: 'PT Mono', monospace;
+
+    a {
+        color: #dbab00;
+        text-decoration: underline;
+    }
+
+    ol {
+        list-style-type: decimal!important;
+    }
+
+    ul {
+        list-style-type: disc!important;
+    }
 }
 
 .bm-burger-bars {

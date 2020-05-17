@@ -9,15 +9,21 @@
       </h2>
     </div>
     <div class="about">
-      <h2>About this project</h2>
+      <h2 class="border-b border-current py-4">
+        About this project
+      </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(about)" />
     </div>
     <div class="technical">
-      <h2>Technical Sheet</h2>
+      <h2 class="border-b border-current py-4">
+        Technical Sheet
+      </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(technical)" />
     </div>
     <div v-if="resources && resources.length > 0" class="resources">
-      <h2>Resources</h2>
+      <h2 class="border-b border-current py-4">
+        Resources
+      </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(resources)" />
     </div>
     <div class="flex items-center relative py-4 my-4">

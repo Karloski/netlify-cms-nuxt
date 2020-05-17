@@ -128,7 +128,7 @@ collections:
           field: { label: Image, name: image, widget: image }
         - { label: About, name: about, widget: markdown }
         - { label: Technical, name: technical, widget: markdown }
-        - { label: Resources, name: resources, widget: markdown }
+        - { label: Resources, name: resources, widget: markdown, required: false }
         - label: Meta
           name: meta
           required: false
