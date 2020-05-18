@@ -1,8 +1,8 @@
 {
-  "title": "Uplink Clone",
+  "title": "Conduit",
   "images": [
-    "/img/uplink.jpg"
+    "/img/conduit.jpg"
   ],
   "about": "Project about my love for an old game called Uplink.",
-  "technical": "* Laravel\n* Vue\n* WebSockets\n* Virtual Machines (for local Linux testing)\n  * Vagrant\n* JavaScript"
+  "technical": "* Laravel\n* Vue\n* WebSockets\n* Virtual Machines (for local Linux testing)\n  * Vagrant\n* JavaScript\n  * Typescript\n* PHP"
 }
