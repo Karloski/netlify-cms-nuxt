@@ -4,5 +4,7 @@
     "/img/conduit.jpg"
   ],
   "about": "Project about my love for an old game called Uplink.",
-  "technical": "* Laravel\n* Vue\n* WebSockets\n* Virtual Machines (for local Linux testing)\n  * Vagrant\n* JavaScript\n  * Typescript\n* PHP"
+  "technical": "* Laravel\n* Vue\n* WebSockets\n* Virtual Machines (for local Linux testing)\n  * Vagrant\n* JavaScript\n  * Typescript\n* PHP",
+  "resources": "<https://bitbucket.org/karl_brown/uplink/src/master/>",
+  "url": "https://bitbucket.org/karl_brown/uplink/src/master/"
 }
