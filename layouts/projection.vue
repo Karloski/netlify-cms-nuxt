@@ -60,7 +60,7 @@
       </transition>
     </div>
     <div class="content flex flex-auto rounded my-8 overflow-auto w-7/10 xl:w-full">
-      <nuxt class="p-8 md:px-4 md:py-0" />
+      <nuxt keep-alive class="p-8 md:px-4 md:py-0" />
     </div>
     <div class="footer -mx-4 md:hidden">
       <span class="px-4">FB</span>

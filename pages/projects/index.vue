@@ -7,7 +7,7 @@
       <transition-group name="list" tag="div">
         <div v-for="project in projects" :key="project.title" class="flex md:flex-col md:items-center justify-between -mx-4 py-4">
           <nuxt-link :to="`/projects/${project.slug}`" class="hover:background-tiertiary hover:mask">
-            <img class="md:w-full max-w-lg px-4 transition duration-700 md:py-4" :src="project.images[0]" :alt="project.title">
+            <img class="md:w-full max-w-xl px-4 transition duration-700 md:py-4" :src="project.images[0]" :alt="project.title">
           </nuxt-link>
           <div class="flex-auto md:text-center px-4 -my-4">
             <h4 class="py-4">
