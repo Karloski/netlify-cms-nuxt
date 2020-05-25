@@ -23,8 +23,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/node_modules/github-markdown-css/github-markdown.css',
-    '@/node_modules/animate.css/animate.min.css',
+    'github-markdown-css',
+    'animate.css',
     '@/assets/css/sass/app.scss'
   ],
   /*
