@@ -43,16 +43,6 @@ export default {
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-  ],
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
     ['nuxt-fontawesome', {
       imports: [
         {
@@ -60,7 +50,17 @@ export default {
           icons: ['fas']
         }
       ]
-    }],
+    }]
+  ],
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    // '@nuxtjs/pwa',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    // '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
   ],
   markdownit: {
