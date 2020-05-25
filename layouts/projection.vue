@@ -108,12 +108,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .3s ease;
+  .slide-vert-enter-active,
+  .slide-vert-leave-active {
+    transition: all 0.1s linear;
   }
-  .fade-enter, .fade-leave-to
-    /* .component-fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
+
+  .slide-vert-enter,
+  .slide-vert-leave-to {
+    max-height: 0;
+    padding: 0;
+    border: 0;
   }
 
   .subnav {
@@ -121,6 +125,7 @@ export default {
     top: 70px;
     z-index: 1000;
     background: #1a0625;
+    will-change: max-height;
   }
 
   video {

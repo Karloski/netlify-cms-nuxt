@@ -34,12 +34,11 @@ h3, .h3 {
     font-size: large;
 }
 
-p {
-    a {
-        transition: 0.5s all;
+a:not(.button) {
+    color: $primary-color;
+    transition: 0.5s all;
 
-        &:hover {
-            text-shadow: 3px 3px 3px $secondary-color;
-        }
+    &:hover {
+        text-shadow: 3px 3px 3px $secondary-color;
     }
 }

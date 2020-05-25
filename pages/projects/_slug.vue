@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col flex-auto -my-4">
+  <div class="projects-item flex flex-col flex-auto -my-4">
     <div class="py-4 w-full relative">
       <div class="bg-gray-900 mask-light w-full">
         <img class="rounded-lg object-cover h-64" :src="images[0]" :alt="title">
@@ -13,19 +13,19 @@
         </span>
       </h2>
     </div>
-    <div class="about">
+    <div class="projetcs-item-about">
       <h2 class="border-b border-current py-4">
         About this project
       </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(about)" />
     </div>
-    <div class="technical">
+    <div class="projetcs-item-technical">
       <h2 class="border-b border-current py-4">
         Technical Sheet
       </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(technical)" />
     </div>
-    <div v-if="resources && resources.length > 0" class="resources">
+    <div v-if="resources && resources.length > 0" class="projetcs-item-resources">
       <h2 class="border-b border-current py-4">
         Resources
       </h2>
