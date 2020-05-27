@@ -1,3 +1,9 @@
+import fs from 'fs'
+import path from 'path'
+
+const projects = fs.readdirSync(path.join(__dirname, '/assets/content/pages/projects'))
+
+// const projects = require.context('@/assets/content/pages/projects/', false, /\.json$/)
 
 export default {
   mode: 'universal',
@@ -29,7 +35,11 @@ export default {
   ],
   generate: {
     routes: [
-      '/projects/bsa-security-and-fire'
+      ...projects.reduce((p, c) => {
+        p.push(`/projects/${/([\w-]+).json/.exec(c)[1]}`)
+
+        return p
+      }, [])
     ]
   },
   /*
