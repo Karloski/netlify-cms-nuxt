@@ -27,18 +27,41 @@
       }
     }
 
+    a, p, span {
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+
     p a, span a {
       text-decoration: underline;
     }
 
     ol li {
       list-style-type: decimal !important;
+      text-align: left;
     }
 
     ul li {
       list-style-type: disc !important;
+      text-align: left;
     }
 }
 
 .svg-inline--fa {} .fa-chevron-right {} .fa-w-10 {}
+
+.projects {
+  &-item {
+    &-header {
+      @media all and (min-width: 767px) {
+        &:hover img {
+          height: 32rem;
+        }
+
+        img {
+          transition: height 0.25s ease;
+        }
+      }
+    }
+  }
+}
 </style>

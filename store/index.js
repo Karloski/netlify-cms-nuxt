@@ -5,8 +5,7 @@ import { getContent } from '../common/util'
 export const appState = {
   projects: [],
   posts: [],
-  structure: [],
-  hello: 'there'
+  structure: []
 }
 
 export const mutations = {
@@ -43,6 +42,7 @@ export const actions = {
         skills: {}
       },
       blog: {
+        latest: {},
         ...blog.categories.reduce((carry, current) => {
           carry[current.name] = {}
 

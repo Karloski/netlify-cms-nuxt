@@ -3,8 +3,6 @@ import path from 'path'
 
 const projects = fs.readdirSync(path.join(__dirname, '/assets/content/pages/projects'))
 
-// const projects = require.context('@/assets/content/pages/projects/', false, /\.json$/)
-
 export default {
   mode: 'universal',
   /*
@@ -31,7 +29,7 @@ export default {
   css: [
     'github-markdown-css',
     'animate.css',
-    '~/assets/css/sass/app.scss'
+    '@/assets/css/sass/app.scss'
   ],
   generate: {
     routes: [
@@ -46,7 +44,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/animateCss'
+    '@/plugins/animateCss',
+    '@/plugins/carousel'
   ],
   /*
   ** Nuxt.js dev-modules

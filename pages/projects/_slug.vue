@@ -1,8 +1,11 @@
 <template>
   <div class="projects-item flex flex-col flex-auto -my-4">
-    <div class="py-4 w-full relative">
+    <div class="projects-item-header py-4 w-full relative">
       <div class="bg-gray-900 mask-light w-full">
-        <img class="rounded-lg object-cover h-64" :src="images[0]" :alt="title">
+        <!-- <client-only placeholder="Loading...">
+          <carousel :data="carouselData" />
+        </client-only> -->
+        <carousel :data="carouselData" />
       </div>
       <h2 class="absolute bottom-0 left-0 p-4 text-shadow-darkened">
         <a v-if="url" :href="url" target="_blank">
@@ -14,19 +17,19 @@
       </h2>
     </div>
     <div class="projetcs-item-about">
-      <h2 class="border-b border-current py-4">
+      <h2 class="border-b border-current py-4 md:text-center">
         About this project
       </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(about)" />
     </div>
     <div class="projetcs-item-technical">
-      <h2 class="border-b border-current py-4">
+      <h2 class="border-b border-current py-4 md:text-center">
         Technical Sheet
       </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(technical)" />
     </div>
     <div v-if="resources && resources.length > 0" class="projetcs-item-resources">
-      <h2 class="border-b border-current py-4">
+      <h2 class="border-b border-current py-4 md:text-center">
         Resources
       </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(resources)" />
@@ -59,10 +62,29 @@ export default {
   },
   layout: 'projection',
   asyncData ({ params }) {
+    const data = require(`@/assets/content/pages/projects/${params.slug}`)
+    const carouselData = []
+
+    for (let id = 0; id < data.images.length; id++) {
+      carouselData.push({
+        id,
+        content (createElement, content) {
+          return createElement('img', {
+            attrs: {
+              src: data.images[id],
+              alt: data.title,
+              class: 'w-full rounded-lg object-cover h-64'
+            }
+          })
+        }
+      })
+    }
+
     return {
       url: '',
       resources: '',
-      ...require(`@/assets/content/pages/projects/${params.slug}`)
+      carouselData,
+      ...data
     }
   },
   data () {
