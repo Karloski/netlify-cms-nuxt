@@ -4,7 +4,7 @@
     "/img/mailbigfile_home.jpg"
   ],
   "about": "MailBigFile, founded in 2005, is a web application that allows users to send large files that are too big for email.\n\nAs the lead for MailBigFile I am responsible for its day-to-day running, as well as any other tasks as necessary. These include database administration, server administration, customer support, code maintenance, product enhancement and more.\n\n",
-  "technical": "* PHP\n* CSS\n* HTML\n* JavaScript\n  * Node\n  * Webpack\n* AWS\n  * EC2\n  * RDS\n  * Elastic Beanstalk\n  * PHP SDK\n  * JavaScript SDK (for the Electron based app)\n  * Cognito\n  * Lambda\n* Electron\n* Uppy\n* Plupload\n* MySQL",
+  "technical": "* PHP\n* CSS\n* HTML\n* JavaScript\n  * Npm\n  * Webpack\n* AWS\n  * EC2\n  * RDS\n  * Elastic Beanstalk\n  * PHP SDK\n  * JavaScript SDK (for the Electron based app)\n  * Cognito\n  * Lambda\n* Electron\n* Uppy\n* Plupload\n* MySQL",
   "url": "https://www.mailbigfile.com",
   "resources": "* [Website](https://www.mailbigfile.com)\n* [MailBigFile's Wikipedia Entry](https://en.wikipedia.org/wiki/Mailbigfile)\n* [Uppy Uploader](https://uppy.io/)\n   * You can trial this on the [Free Service](https://free.mailbigfile.com)\n* [Plupload](https://www.plupload.com/)\n   * You can also see this on the [Free Service](https://free.mailbigfile.com)\n* [Desktop App in Electron](https://www.mailbigfile.com/app)\n   * Requires an account to use"
 }
