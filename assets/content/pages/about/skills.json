@@ -8,6 +8,48 @@
           "name": "php",
           "overview": "Some overview",
           "examples": "Some examples"
+        },
+        {
+          "name": "C#",
+          "icon": "/img/c-sharp-01.svg",
+          "overview": "Some overview",
+          "examples": "Some overview"
+        },
+        {
+          "name": "CSS",
+          "icon": "/img/css-3-01.svg",
+          "overview": "Some overview",
+          "examples": "Some overview"
+        },
+        {
+          "name": "HTML",
+          "icon": "/img/html-5-01.svg",
+          "overview": "Some overview",
+          "examples": "Some overview"
+        },
+        {
+          "name": "Java",
+          "icon": "/img/java-01.svg",
+          "overview": "Some overview",
+          "examples": "Some overview"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "/img/javascript-01.svg",
+          "overview": "Some overview",
+          "examples": "Some overview"
+        },
+        {
+          "name": "MySQL",
+          "icon": "/img/mysql-01.svg",
+          "overview": "Some overview",
+          "examples": "Some overview"
+        },
+        {
+          "name": "Vue",
+          "icon": "/img/vue-js-01.svg",
+          "overview": "Some overview",
+          "examples": "Some overview"
         }
       ]
     },
