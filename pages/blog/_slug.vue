@@ -37,7 +37,7 @@ export default {
   },
   layout: 'projection',
   asyncData ({ params }) {
-    return require(`@/assets/content/blog/${params.slug}`)
+    // return require(`@/assets/content/blog/${params.slug}`)
   },
   computed: {
     previous () {
@@ -49,6 +49,10 @@ export default {
   },
   created () {
     this.index = this.$store.state.posts.findIndex(p => p.title === this.title)
+
+    for (const key in this.$store.state.posts[this.index]) {
+      this[key] = this.$store.state.posts[this.index][key]
+    }
   }
 }
 </script>

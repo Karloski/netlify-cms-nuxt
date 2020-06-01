@@ -45,7 +45,8 @@ export default {
   */
   plugins: [
     '@/plugins/animateCss',
-    '@/plugins/carousel'
+    '@/plugins/carousel',
+    '@/plugins/singulariseFilter'
   ],
   /*
   ** Nuxt.js dev-modules

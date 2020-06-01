@@ -6,35 +6,41 @@
       </h1>
     </div>
     <div class="flex flex-auto -mx-4">
-      <div class="flex flex-col flex-auto -my-2">
+      <div class="flex flex-col flex-auto -my-2 py-2">
         <div class="flex justify-center items-center m-auto w-full max-w-lg py-2 relative">
           <div v-if="selectedCategory > 0" class="absolute left-0" @click="selectedCategory--">
             <font-awesome-icon icon="chevron-left" class="cursor-pointer" />
           </div>
-          <strong class="text-xl">
+          <h4>
             {{ shownCategory.name }}
-          </strong>
+          </h4>
           <div v-if="selectedCategory + 1 < categories.length" class="absolute right-0" @click="selectedCategory++">
             <font-awesome-icon icon="chevron-right" class="cursor-pointer" />
           </div>
         </div>
-        <div class="flex justify-center -mx-4 py-2">
-          <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" class="px-4">
-            <img :src="subcat.icon" :alt="subcat.name" class="icon cursor-pointer" @click="selectedSubcat = subindex">
+        <div class="flex flex-wrap justify-center -mx-4 py-2">
+          <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" class="p-4">
+            <img :src="subcat.icon" :alt="subcat.name" class="icon-l cursor-pointer" @click="selectedSubcat = subindex">
           </div>
         </div>
-        <div class="flex flex-col flex-auto items-center py-2 -my-2 text-center">
-          <div class="py-2">
-            <div>
-              <strong class="text-lg">Overview</strong>
-            </div>
-            <div v-html="$md.render(overview)" />
+        <div class="flex justify-center my-4">
+          <div>
+            <h4>Examples</h4>
           </div>
-          <div class="py-2">
-            <div>
-              <strong class="text-lg">Examples</strong>
+        </div>
+        <div class="skills-examples flex flex-col flex-auto items-center justify-start py-2 -my-2 text-center">
+          <div v-if="examples.length > 0" class="flex flex-wrap justify-center items-start -m-4">
+            <div v-for="example in examples" :key="example.title" class="p-4 relative">
+              <nuxt-link :to="`/projects/${example.slug}`">
+                <img class="md:w-full max-w-xl" :src="example.images[0]" :alt="example.title">
+                <img src="/img/search.svg" alt="Magnifying Glass" class="icon-l absolute absolute-center">
+              </nuxt-link>
             </div>
-            <div v-html="$md.render(examples)" />
+          </div>
+          <div v-else>
+            <h4>
+              No examples found!
+            </h4>
           </div>
         </div>
       </div>
@@ -51,21 +57,9 @@ export default {
   layout: 'projection',
   async asyncData ({ context }) {
     const data = await require('@/assets/content/pages/about/skills.json')
-    const menu = await require.context('@/assets/content/pages/about/', false, /\.json$/).keys().reduce((carry, name) => {
-      name = /\.\/(.*)\.json/.exec(name)[1]
-
-      carry.push({
-        name,
-        link: `/about/${name}`,
-        icon: '/img/php.svg'
-      })
-
-      return carry
-    }, [])
 
     return {
-      ...data,
-      menu
+      ...data
     }
   },
   data () {
@@ -78,19 +72,15 @@ export default {
     shownCategory () {
       return this.categories[this.selectedCategory]
     },
-    overview () {
-      if (this.selectedSubcat < 0) {
-        return ''
-      }
-
-      return this.categories[this.selectedCategory].subcategories[this.selectedSubcat].overview
+    subcatName () {
+      return this.categories[this.selectedCategory].subcategories[this.selectedSubcat].name
     },
     examples () {
-      if (this.selectedSubcat < 0) {
-        return ''
-      }
+      const regex = new RegExp(`\\b${this.subcatName}\\b`, 'i')
 
-      return this.categories[this.selectedCategory].subcategories[this.selectedSubcat].examples
+      return this.$store.state.projects.filter((p) => {
+        return regex.exec(p.technical) !== null
+      })
     }
   },
   mounted () {
@@ -98,3 +88,30 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.skills {
+  &-examples {
+    a {
+      img:first-child {
+        transition: filter 700ms ease;
+      }
+
+      img:last-child {
+        transition: opacity 1400ms ease;
+        opacity: 0;
+      }
+
+      &:hover {
+        img:last-child {
+          opacity: 1;
+        }
+
+        img:first-child {
+          filter: blur(5px);
+        }
+      }
+    }
+  }
+}
+</style>

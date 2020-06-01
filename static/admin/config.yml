@@ -81,7 +81,6 @@ collections:
         fields:
           - { label: Portrait, name: portrait, widget: image }
           - { label: Content, name: content, widget: markdown }
-          - { label: Icon, name: icon, required: false }
       - label: 'Skills Page'
         name: "about_skills"
         file: "assets/content/pages/about/skills.json"
@@ -97,9 +96,6 @@ collections:
                 fields:
                   - { label: Name, name: name, widget: string }
                   - { label: Icon, name: icon, widget: image }
-                  - { label: Overview, name: overview, widget: markdown }
-                  - { label: Examples, name: examples, widget: markdown }
-          - { label: Icon, name: icon, required: false }
       - label: 'Education Page'
         name: "about_education"
         file: "assets/content/pages/about/education.json"
@@ -112,7 +108,6 @@ collections:
               - { label: Logo, name: logo, widget: image }
               - { label: Banner, name: banner, widget: image, required: false }
               - { label: Content, name: content, widget: markdown }
-          - { label: Icon, name: icon, required: false }
 
   - name: 'project_pages'
     label: 'Project Page'

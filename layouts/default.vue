@@ -29,7 +29,7 @@
 
     a, p, span {
       word-wrap: break-word;
-      word-break: break-all;
+      word-break: break-word;
     }
 
     p a, span a {
@@ -60,6 +60,12 @@
         img {
           transition: height 0.25s ease;
         }
+      }
+    }
+
+    &-resources {
+      a, a:hover {
+        text-decoration: underline;
       }
     }
   }

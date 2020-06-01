@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import { getContent } from '../common/util'
 
@@ -27,9 +28,9 @@ export const actions = {
     commit('SET_PROJECTS', posts)
   },
   async GET_POSTS ({ commit }) {
-    const context = await require.context('@/assets/content/blog/', false, /\.json$/)
-    const posts = await getContent({ context, path: 'assets/content/blog' })
-    commit('SET_POSTS', posts)
+    // const context = await require.context('@/assets/content/blog/', false, /\.json$/)
+    // const posts = await getContent({ context, path: 'assets/content/blog' })
+    // commit('SET_POSTS', posts)
   },
   async GET_STRUCTURE ({ commit }) {
     const blog = await require('@/assets/content/settings/blog')

@@ -16,19 +16,22 @@
         </span>
       </h2>
     </div>
-    <div class="projetcs-item-about">
+    <div class="projects-item-about">
       <h2 class="border-b border-current py-4 md:text-center">
         About this project
       </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(about)" />
     </div>
-    <div class="projetcs-item-technical">
+    <div class="projects-item-technical">
       <h2 class="border-b border-current py-4 md:text-center">
         Technical Sheet
       </h2>
+      <div class="mt-4">
+        Below are the technologies and frameworks that I have been exposed to as part of this project.
+      </div>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(technical)" />
     </div>
-    <div v-if="resources && resources.length > 0" class="projetcs-item-resources">
+    <div v-if="resources && resources.length > 0" class="projects-item-resources">
       <h2 class="border-b border-current py-4 md:text-center">
         Resources
       </h2>
@@ -41,9 +44,9 @@
           {{ previous.title }}
         </span>
       </nuxt-link>
-      <nuxt-link :to="'/projects'" class="button absolute absolute-center-x">
+      <a class="button absolute absolute-center-x cursor-pointer" @click.prevent="$router.push({ path: route.from })">
         Back
-      </nuxt-link>
+      </a>
       <nuxt-link v-if="index < $store.state.projects.length - 1" :to="`/projects/${next.slug}`" class="button flex items-center absolute right-0">
         <span class="pr-2 md:hidden">
           {{ next.title }}
@@ -90,7 +93,10 @@ export default {
   data () {
     return {
       ...this.$data,
-      index: 0
+      index: 0,
+      route: {
+        from: '/projects'
+      }
     }
   },
   computed: {
@@ -103,6 +109,11 @@ export default {
   },
   created () {
     this.index = this.$store.state.projects.findIndex(p => p.title === this.title)
+  },
+  beforeRouteEnter (to, from, next) {
+    next((vm) => {
+      vm.route.from = from.name !== null ? from.fullPath : '/projects'
+    })
   }
 }
 </script>
