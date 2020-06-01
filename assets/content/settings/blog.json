@@ -1,9 +1,3 @@
 {
-  "categories": [
-    {
-      "icon": "/static/img/icon.svg",
-      "name": "Gaming",
-      "slug": "gaming"
-    }
-  ]
+  "categories": []
 }
