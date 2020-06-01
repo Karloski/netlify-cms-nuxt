@@ -49,6 +49,12 @@
           "icon": "/img/vue-js-01.svg",
           "overview": "drsger",
           "examples": "sgsg"
+        },
+        {
+          "name": "WordPress",
+          "icon": "/img/wordpress.svg",
+          "overview": "dfhdrgdr",
+          "examples": "gdrgdr"
         }
       ]
     }
