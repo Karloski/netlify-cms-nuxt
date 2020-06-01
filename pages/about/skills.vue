@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col flex-auto -my-4 relative md:static">
+  <div class="skills flex flex-col flex-auto -my-4 relative md:static">
     <div class="relative text-center py-4 md:static">
       <h1>
         Skills
@@ -18,9 +18,9 @@
             <font-awesome-icon icon="chevron-right" class="cursor-pointer" />
           </div>
         </div>
-        <div class="flex flex-wrap justify-center -mx-4 py-2">
+        <div class="skills-subcat flex flex-wrap justify-center -mx-4 py-2">
           <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" class="p-4">
-            <img :src="subcat.icon" :alt="subcat.name" class="icon-l cursor-pointer" @click="selectedSubcat = subindex">
+            <img :src="subcat.icon" :alt="subcat.name" :class="'icon-l cursor-pointer rounded-full' + (selectedSubcat === subindex ? ' skills-subcat-selected' : '')" @click="selectedSubcat = subindex">
           </div>
         </div>
         <div class="flex justify-center my-4">
@@ -29,14 +29,14 @@
           </div>
         </div>
         <div class="skills-examples flex flex-col flex-auto items-center justify-start py-2 -my-2 text-center">
-          <div v-if="examples.length > 0" class="flex flex-wrap justify-center items-start -m-4">
+          <transition-group v-if="examples.length > 0" name="list" tag="div" class="flex flex-wrap justify-center items-start -m-4">
             <div v-for="example in examples" :key="example.title" class="p-4 relative">
               <nuxt-link :to="`/projects/${example.slug}`">
                 <img class="md:w-full max-w-xl" :src="example.images[0]" :alt="example.title">
                 <img src="/img/search.svg" alt="Magnifying Glass" class="icon-l absolute absolute-center">
               </nuxt-link>
             </div>
-          </div>
+          </transition-group>
           <div v-else>
             <h4>
               No examples found!
@@ -113,5 +113,31 @@ export default {
       }
     }
   }
+
+  &-subcat {
+    img {
+      transition: box-shadow 700ms ease;
+    }
+
+    &-selected {
+      box-shadow: 0 0 5px 3px #dbab00;
+    }
+  }
+}
+
+.list-leave-active {
+  transition: all 500ms ease;
+}
+
+.list-enter-active {
+  transition: all 500ms ease;
+}
+
+.list-enter {
+  transform: translateY(500px);
+}
+
+.list-leave-to {
+  transform: translateX(-500px);
 }
 </style>

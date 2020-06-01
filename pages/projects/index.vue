@@ -3,13 +3,13 @@
     <h1 class="text-center py-4">
       My Projects
     </h1>
-    <div class="flex flex-col flex-auto justify-center items-center -my-4 py-4">
+    <div class="projects-list flex flex-col flex-auto justify-center items-center -my-4 py-4">
       <transition-group name="list" tag="div">
-        <div v-for="project in projects" :key="project.title" class="flex md:flex-col md:items-center justify-between -mx-4 py-4">
-          <nuxt-link :to="`/projects/${project.slug}`" class="hover:background-tiertiary hover:mask">
+        <div v-for="project in projects" :key="project.title" class="projects-item flex flex-wrap md:flex-col md:items-center justify-center -mx-4 py-4">
+          <nuxt-link :to="`/projects/${project.slug}`" class="flex-initial hover:background-tiertiary hover:mask py-4">
             <img class="md:w-full max-w-xl px-4 transition duration-700 md:py-4" :src="project.images[0]" :alt="project.title">
           </nuxt-link>
-          <div class="flex-auto md:text-center px-4 -my-4">
+          <div class="projects-item-excerpt flex-auto md:text-center p-4 -my-4">
             <h4 class="py-4">
               <nuxt-link :to="`/projects/${project.slug}`">
                 {{ project.title }}
@@ -83,6 +83,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.projects {
+  &-item {
+    &-excerpt {
+      @media all and (min-width: 768px) {
+        flex: 1 1 36rem;
+      }
+    }
+  }
+}
+
 .list-enter-active, .list-leave-active {
   transition: all 1s;
 }
