@@ -105,6 +105,10 @@
         {
           "name": "Composer",
           "icon": "/img/composer-logo.png"
+        },
+        {
+          "name": "Websockets",
+          "icon": "/img/websockets.gif"
         }
       ]
     },
