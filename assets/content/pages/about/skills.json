@@ -99,6 +99,23 @@
           "icon": "/img/apache.png"
         }
       ]
+    },
+    {
+      "name": "Operating System",
+      "subcategories": [
+        {
+          "name": "Windows",
+          "icon": "/img/win-logo.gif"
+        },
+        {
+          "name": "Macintosh",
+          "icon": "/img/mac-logo.png"
+        },
+        {
+          "name": "Ubuntu",
+          "icon": "/img/ubuntu-logo.png"
+        }
+      ]
     }
   ]
 }
