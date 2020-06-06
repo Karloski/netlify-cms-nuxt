@@ -32,6 +32,10 @@
           "icon": "/img/mysql-01.svg",
           "overview": "Some overview",
           "examples": "Some overview"
+        },
+        {
+          "name": "C#",
+          "icon": "/img/c-sharp-01.svg"
         }
       ]
     },
@@ -97,6 +101,31 @@
         {
           "name": "Apache",
           "icon": "/img/apache.png"
+        },
+        {
+          "name": "Composer",
+          "icon": "/img/composer-logo.png"
+        },
+        {
+          "name": "Websockets",
+          "icon": "/img/websockets.gif"
+        }
+      ]
+    },
+    {
+      "name": "Operating System",
+      "subcategories": [
+        {
+          "name": "Windows",
+          "icon": "/img/win-logo.gif"
+        },
+        {
+          "name": "Macintosh",
+          "icon": "/img/mac-logo.png"
+        },
+        {
+          "name": "Ubuntu",
+          "icon": "/img/ubuntu-logo.png"
         }
       ]
     }
