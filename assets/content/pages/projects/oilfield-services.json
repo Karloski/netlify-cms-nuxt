@@ -1,7 +1,7 @@
 {
   "title": "Oilfield Services",
   "about": "Oilfield Services is a website created using simple HTML/CSS (Bootstrap) and PHP. It was originally created by a former colleague and picked up by me later into its development. It currently has 7 promotional pages, a login for consultants and an admin area.",
-  "technical": "* CSS\n* HTML\n* JavaScript\n* PHP\n* Linux\n   * Apache\n* MySQL\n* Client Liaising",
+  "technical": "* CSS\n* HTML\n* JavaScript\n* PHP\n* Linux\n   * Apache\n* MySQL",
   "url": "http://oilfieldservices.dessol.com/",
   "images": [
     "/img/ofs.jpg"
