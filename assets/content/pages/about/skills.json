@@ -101,6 +101,10 @@
         {
           "name": "Apache",
           "icon": "/img/apache.png"
+        },
+        {
+          "name": "Composer",
+          "icon": "/img/composer-logo.png"
         }
       ]
     },
