@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="skills-subcat flex flex-wrap justify-center -mx-4 py-2">
-          <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" class="p-4">
+          <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" class="m-4 bg-white rounded-full">
             <img :src="subcat.icon" :alt="subcat.name" :class="'icon-l cursor-pointer rounded-full' + (selectedSubcat === subindex ? ' skills-subcat-selected' : '')" @click="selectedSubcat = subindex">
           </div>
         </div>
@@ -29,14 +29,23 @@
           </div>
         </div>
         <div class="skills-examples flex flex-col flex-auto items-center justify-start py-2 -my-2 text-center">
-          <transition-group v-if="examples.length > 0" name="list" tag="div" class="flex flex-wrap justify-center items-start -m-4">
-            <div v-for="example in examples" :key="example.title" class="p-4 relative">
+          <transition-group v-if="examples.length > 0" name="gallery" tag="div" class="skills-examples-item flex flex-wrap flex-auto w-full justify-center content-start items-start -m-4">
+            <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded" :style="`background-image: url(${example.images[0]})`">
+              <div class="skills-examples-mask flex items-center justify-center w-full h-full absolute transform translate-y-full">
+                <nuxt-link :to="`/projects/${example.slug}`" class="px-6 py-4 bg-transparent border rounded-lg">
+                  View Project
+                </nuxt-link>
+              </div>
+            </div>
+          </transition-group>
+          <!-- <transition-group v-if="examples.length > 0" name="gallery" tag="div" class="flex flex-wrap justify-center items-start -m-4">
+            <div v-for="example in examples" :key="example.title" class="p-4 relative transition-all duration-500">
               <nuxt-link :to="`/projects/${example.slug}`">
                 <img class="md:w-full max-w-xl" :src="example.images[0]" :alt="example.title">
                 <img src="/img/search.svg" alt="Magnifying Glass" class="icon-l absolute absolute-center">
               </nuxt-link>
             </div>
-          </transition-group>
+          </transition-group> -->
           <div v-else>
             <h4>
               No examples found!
@@ -92,24 +101,30 @@ export default {
 <style lang="scss" scoped>
 .skills {
   &-examples {
-    a {
-      img:first-child {
-        transition: filter 700ms ease;
+    &-item {
+      > div {
+        max-height: 16rem;
+
+        &:hover {
+          .skills-examples-mask {
+            transform: translateY(0%);
+          }
+        }
+      }
+    }
+
+    &-mask {
+      background: #170122bd;
+      transition: transform 500ms ease;
+
+      a {
+        border-color: #DBAB00;
       }
 
-      img:last-child {
-        transition: opacity 1400ms ease;
-        opacity: 0;
-      }
-
-      &:hover {
-        img:last-child {
-          opacity: 1;
-        }
-
-        img:first-child {
-          filter: blur(5px);
-        }
+      a:hover {
+        background: #DBAB00;
+        text-shadow: none;
+        color: white;
       }
     }
   }
@@ -125,19 +140,12 @@ export default {
   }
 }
 
-.list-leave-active {
-  transition: all 500ms ease;
+.gallery-enter, .gallery-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.list-enter-active {
-  transition: all 500ms ease;
-}
-
-.list-enter {
-  transform: translateY(500px);
-}
-
-.list-leave-to {
-  transform: translateX(-500px);
+.gallery-leave-active {
+  position: absolute;
 }
 </style>
