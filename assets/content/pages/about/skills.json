@@ -32,6 +32,10 @@
           "icon": "/img/mysql-01.svg",
           "overview": "Some overview",
           "examples": "Some overview"
+        },
+        {
+          "name": "C#",
+          "icon": "/img/c-sharp-01.svg"
         }
       ]
     },
