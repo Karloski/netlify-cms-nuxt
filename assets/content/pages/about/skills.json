@@ -57,8 +57,29 @@
           "examples": "gdrgdr"
         },
         {
+          "name": "Nuxt",
+          "icon": "/img/nuxt.svg"
+        },
+        {
+          "name": "Netlify CMS",
+          "icon": "/img/netlify-cms.jpg"
+        },
+        {
+          "name": "SCSS",
+          "icon": "/img/sass.png"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "subcategories": [
+        {
           "name": "Amazon Web Services",
           "icon": "/img/aws.png"
+        },
+        {
+          "name": "Netlify",
+          "icon": "/img/netlify.svg"
         }
       ]
     },
@@ -72,6 +93,10 @@
         {
           "name": "npm",
           "icon": "/img/n.png"
+        },
+        {
+          "name": "Apache",
+          "icon": "/img/apache.png"
         }
       ]
     }
