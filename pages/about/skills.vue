@@ -30,7 +30,7 @@
         </div>
         <div class="skills-examples flex flex-col flex-auto items-center justify-start py-2 -my-2 text-center">
           <transition-group v-if="examples.length > 0" name="gallery" tag="div" class="skills-examples-item flex flex-wrap flex-auto w-full justify-center content-start items-start -m-4">
-            <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded" :style="`background-image: url(${example.images[0]})`">
+            <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${example.images[0]})`">
               <div class="skills-examples-mask flex items-center justify-center w-full h-full absolute transform translate-y-full">
                 <nuxt-link :to="`/projects/${example.slug}`" class="px-6 py-4 bg-transparent border rounded-lg">
                   View Project
@@ -38,14 +38,6 @@
               </div>
             </div>
           </transition-group>
-          <!-- <transition-group v-if="examples.length > 0" name="gallery" tag="div" class="flex flex-wrap justify-center items-start -m-4">
-            <div v-for="example in examples" :key="example.title" class="p-4 relative transition-all duration-500">
-              <nuxt-link :to="`/projects/${example.slug}`">
-                <img class="md:w-full max-w-xl" :src="example.images[0]" :alt="example.title">
-                <img src="/img/search.svg" alt="Magnifying Glass" class="icon-l absolute absolute-center">
-              </nuxt-link>
-            </div>
-          </transition-group> -->
           <div v-else>
             <h4>
               No examples found!
