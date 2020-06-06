@@ -7,7 +7,7 @@
     </div>
     <div class="flex flex-auto -mx-4">
       <div class="flex flex-col flex-auto -my-2 py-2">
-        <div class="flex justify-center items-center m-auto w-full max-w-lg py-2 relative">
+        <div class="flex justify-center items-center mx-auto w-full max-w-lg py-2 relative">
           <div v-if="selectedCategory > 0" class="absolute left-0" @click="selectedCategory--">
             <font-awesome-icon icon="chevron-left" class="cursor-pointer" />
           </div>
@@ -23,27 +23,24 @@
             <img :src="subcat.icon" :alt="subcat.name" :class="'icon-l cursor-pointer rounded-full' + (selectedSubcat === subindex ? ' skills-subcat-selected' : '')" @click="selectedSubcat = subindex">
           </div>
         </div>
-        <div class="flex justify-center my-4">
-          <div>
-            <h4>Examples</h4>
-          </div>
-        </div>
-        <div class="skills-examples flex flex-col flex-auto items-center justify-start py-2 -my-2 text-center">
-          <transition-group v-if="examples.length > 0" name="gallery" tag="div" class="skills-examples-item flex flex-wrap flex-auto w-full justify-center content-start items-start -m-4">
-            <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${example.images[0]})`">
-              <div class="skills-examples-mask flex items-center justify-center w-full h-full absolute transform translate-y-full">
-                <nuxt-link :to="`/projects/${example.slug}`" class="px-6 py-4 bg-transparent border rounded-lg">
-                  View Project
-                </nuxt-link>
-              </div>
+        <transition name="fade">
+          <div v-if="examples.length > 0" class="flex flex-auto flex-col justify-center my-4">
+            <div class="flex justify-center my-2">
+              <h4>Examples</h4>
             </div>
-          </transition-group>
-          <div v-else>
-            <h4>
-              No examples found!
-            </h4>
+            <div class="skills-examples flex flex-col flex-auto items-center justify-start my-4 text-center">
+              <transition-group name="gallery" tag="div" class="skills-examples-item flex flex-wrap flex-auto w-full justify-center content-start items-start">
+                <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${example.images[0]})`">
+                  <div class="skills-examples-mask flex items-center justify-center w-full h-full absolute transform translate-y-full">
+                    <nuxt-link :to="`/projects/${example.slug}`" class="px-6 py-4 bg-transparent border rounded-lg">
+                      View Project
+                    </nuxt-link>
+                  </div>
+                </div>
+              </transition-group>
+            </div>
           </div>
-        </div>
+        </transition>
       </div>
     </div>
   </div>
