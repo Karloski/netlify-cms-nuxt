@@ -59,6 +59,10 @@
         {
           "name": "Amazon Web Services",
           "icon": "/img/aws.png"
+        },
+        {
+          "name": "Nuxt",
+          "icon": "/img/nuxt.svg"
         }
       ]
     },
