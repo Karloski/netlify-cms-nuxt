@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="skills-subcat flex flex-wrap justify-center -mx-4 py-2">
-          <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" class="m-4 bg-white rounded-full">
+          <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" v-tooltip="subcat.name" class="m-4 bg-white rounded-full">
             <img :src="subcat.icon" :alt="subcat.name" :class="'icon-l cursor-pointer rounded-full' + (selectedSubcat === subindex ? ' skills-subcat-selected' : '')" @click="selectedSubcat = subindex">
           </div>
         </div>
