@@ -55,6 +55,23 @@
           "icon": "/img/wordpress.svg",
           "overview": "dfhdrgdr",
           "examples": "gdrgdr"
+        },
+        {
+          "name": "Amazon Web Services",
+          "icon": "/img/aws.png"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "subcategories": [
+        {
+          "name": "Webpack",
+          "icon": "/img/icon-square-small.png"
+        },
+        {
+          "name": "npm",
+          "icon": "/img/n.png"
         }
       ]
     }
