@@ -9,6 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "postinstall": "netlify-lambda install",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
@@ -18,12 +19,20 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/markdownit": "^1.2.9",
+    "@nuxtjs/proxy": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "animate.css": "^3.7.2",
+    "express": "^4.17.1",
     "github-markdown-css": "^4.0.0",
+    "netlify-lambda": "^1.6.3",
+    "nodemailer": "^6.4.8",
     "nuxt": "^2.12.2",
+    "sparkpost": "^2.1.4",
     "v-tooltip": "^2.0.3",
-    "vue-template-compiler": "^2.6.11"
+    "validator": "^13.0.0",
+    "vue-template-compiler": "^2.6.11",
+    "xss": "^1.0.6",
+    "xss-filters": "^1.2.7"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

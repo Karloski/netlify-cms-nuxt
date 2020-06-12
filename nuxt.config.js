@@ -3,6 +3,21 @@ import path from 'path'
 
 const projects = fs.readdirSync(path.join(__dirname, '/assets/content/pages/projects'))
 
+let proxy = {}
+
+if ('NETLIFY_DEV' in process.env) {
+  proxy = {
+    '/api/': { target: 'http://localhost:8888', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
+  }
+}
+
+if ('NODE_ENV' in process.env && process.env.NODE_ENV === 'development') {
+  proxy = {
+    '/.netlify/functions': { target: 'http://localhost:8888', pathRewrite: { '^/.netlify/functions': '/' } },
+    '/api/': { target: 'http://localhost:8888', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
+  }
+}
+
 export default {
   mode: 'universal',
   /*
@@ -67,6 +82,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     // '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     // '@nuxtjs/dotenv',
@@ -77,7 +93,7 @@ export default {
   },
   fontawesome: {
     icons: {
-      solid: ['faChevronRight', 'faChevronLeft']
+      solid: ['faChevronRight', 'faChevronLeft', 'faSpinner']
     }
   },
   /*
@@ -85,7 +101,9 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
   },
+  proxy,
   /*
   ** Build configuration
   */

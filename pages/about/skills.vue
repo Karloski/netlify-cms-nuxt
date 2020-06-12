@@ -8,13 +8,13 @@
     <div class="flex flex-auto -mx-4">
       <div class="flex flex-col flex-auto -my-2 py-2">
         <div class="flex justify-center items-center mx-auto w-full max-w-lg py-2 relative">
-          <div v-if="selectedCategory > 0" class="absolute left-0" @click="selectedCategory--">
+          <div v-if="selectedCategory > 0" class="absolute left-0" @click="move(--selectedCategory)">
             <font-awesome-icon icon="chevron-left" class="cursor-pointer" />
           </div>
           <h4>
             {{ shownCategory.name }}
           </h4>
-          <div v-if="selectedCategory + 1 < categories.length" class="absolute right-0" @click="selectedCategory++">
+          <div v-if="selectedCategory + 1 < categories.length" class="absolute right-0" @click="move(++selectedCategory)">
             <font-awesome-icon icon="chevron-right" class="cursor-pointer" />
           </div>
         </div>
@@ -83,6 +83,15 @@ export default {
   },
   mounted () {
     this.selectedCategory = 0
+  },
+  methods: {
+    move (to) {
+      this.selectedCategory = to
+
+      if (!(this.selectedSubcat in this.categories[this.selectedCategory].subcategories)) {
+        this.selectedSubcat = 0
+      }
+    }
   }
 }
 </script>

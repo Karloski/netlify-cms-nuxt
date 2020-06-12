@@ -38,9 +38,9 @@ export const actions = {
     commit('SET_STRUCTURE', {
       projects: {},
       about: {
-        education: {},
         profile: {},
-        skills: {}
+        skills: {},
+        contact: {}
       },
       blog: {
         latest: {},

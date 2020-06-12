@@ -3,7 +3,6 @@ import Vue from 'vue'
 // Simple function to turn a plural into a singular case
 // Currently only works with words that end in an 's'.
 Vue.filter('singularise', function (value) {
-  console.log('Singularising', value)
   if (!value) {
     return ''
   }

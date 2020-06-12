@@ -18,10 +18,9 @@
 // the styles simply won't be loaded for production if you do this.
 .markdown-body {
     font-family: 'PT Mono', monospace;
+    color: #DBAB00 !important;
 
     a {
-      color: #DBAB00 !important;
-
       &:hover {
         text-decoration: none;
       }
