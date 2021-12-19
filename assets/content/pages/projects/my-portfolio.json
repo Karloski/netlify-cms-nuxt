@@ -6,5 +6,12 @@
   "images": [
     "/img/portfolio.jpg"
   ],
-  "resources": "* [Github Page](https://github.com/Karloski/netlify-cms-nuxt)"
+  "resources": "* [Github Page](https://github.com/Karloski/netlify-cms-nuxt)",
+  "stack": [
+    "Netlify",
+    "Netlify CMS",
+    "Nuxt",
+    "Vue",
+    "JavaScript"
+  ]
 }
