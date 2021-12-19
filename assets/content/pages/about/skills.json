@@ -180,6 +180,61 @@
       "name": "Netlify CMS",
       "type": "cms",
       "icon": "/img/netlify-cms.jpg"
+    },
+    {
+      "name": "SCSS",
+      "type": "framework",
+      "icon": "/img/sass.png"
+    },
+    {
+      "name": "AWS",
+      "type": "service",
+      "icon": "/img/aws.png"
+    },
+    {
+      "name": "Netlify",
+      "type": "service",
+      "icon": "/img/netlify.svg"
+    },
+    {
+      "name": "Webpack",
+      "type": "tool",
+      "icon": "/img/icon-square-small.png"
+    },
+    {
+      "name": "npm",
+      "type": "tool",
+      "icon": "/img/n.png"
+    },
+    {
+      "name": "Apache",
+      "type": "tool",
+      "icon": "/img/apache.png"
+    },
+    {
+      "name": "Composer",
+      "type": "tool",
+      "icon": "/img/composer-logo.png"
+    },
+    {
+      "name": "WebSockets",
+      "type": "tool",
+      "icon": "/img/websockets.gif"
+    },
+    {
+      "name": "Windows",
+      "type": "operating system",
+      "icon": "/img/win-logo.gif"
+    },
+    {
+      "name": "Ubuntu",
+      "type": "operating system",
+      "icon": "/img/ubuntu-logo.png"
+    },
+    {
+      "name": "Macintosh",
+      "type": "operating system",
+      "icon": "/img/mac-logo.png"
     }
   ]
 }
