@@ -132,9 +132,14 @@
   ],
   "skills": [
     {
-      "type": "Language",
+      "type": "language",
       "name": "php",
       "icon": "/img/php.svg"
+    },
+    {
+      "name": "Laravel",
+      "type": "framework",
+      "icon": "/img/laravel.svg"
     }
   ]
 }
