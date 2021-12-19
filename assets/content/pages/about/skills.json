@@ -268,6 +268,12 @@
       "type": "service",
       "icon": "/img/google-cloud-platform.svg",
       "label": "Google Cloud Platform"
+    },
+    {
+      "label": "Google Firestore",
+      "name": "Firestore",
+      "type": "Google Cloud Platform",
+      "icon": "/img/daco_3877090.png"
     }
   ]
 }
