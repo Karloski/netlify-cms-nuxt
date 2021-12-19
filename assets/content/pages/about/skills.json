@@ -140,6 +140,46 @@
       "name": "Laravel",
       "type": "framework",
       "icon": "/img/laravel.svg"
+    },
+    {
+      "name": "CSS",
+      "type": "language",
+      "icon": "/img/css-3-01.svg"
+    },
+    {
+      "name": "HTML",
+      "type": "language",
+      "icon": "/img/html-5-01.svg"
+    },
+    {
+      "name": "JavaScript",
+      "type": "language",
+      "icon": "/img/javascript-01.svg"
+    },
+    {
+      "name": "MySQL",
+      "type": "language",
+      "icon": "/img/mysql-01.svg"
+    },
+    {
+      "name": "Vue",
+      "type": "framework",
+      "icon": "/img/vue-js-01.svg"
+    },
+    {
+      "name": "WordPress",
+      "type": "cms",
+      "icon": "/img/wordpress.svg"
+    },
+    {
+      "name": "Nuxt",
+      "type": "framework",
+      "icon": "/img/nuxt.svg"
+    },
+    {
+      "name": "Netlify CMS",
+      "type": "cms",
+      "icon": "/img/netlify-cms.jpg"
     }
   ]
 }
