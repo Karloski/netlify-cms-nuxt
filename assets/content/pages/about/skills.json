@@ -240,6 +240,11 @@
       "name": "TypeScript",
       "type": "language",
       "icon": "/img/typescript_logo_2020.svg"
+    },
+    {
+      "name": "GCP",
+      "type": "service",
+      "icon": "/img/google-cloud-platform.svg"
     }
   ]
 }
