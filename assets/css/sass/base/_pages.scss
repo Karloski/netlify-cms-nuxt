@@ -1,0 +1,40 @@
+.skills {
+  &-examples {
+    &-item {
+      > div {
+        max-height: 16rem;
+
+        &:hover {
+          .skills-examples-mask {
+            transform: translateY(0%);
+          }
+        }
+      }
+    }
+
+    &-mask {
+      background: #170122bd;
+      transition: transform 500ms ease;
+
+      a {
+        border-color: #DBAB00;
+      }
+
+      a:hover {
+        background: #DBAB00;
+        text-shadow: none;
+        color: white;
+      }
+    }
+  }
+
+  &-subcat {
+    img {
+      transition: box-shadow 700ms ease;
+    }
+
+    &-selected {
+      box-shadow: 0 0 5px 3px #dbab00;
+    }
+  }
+}

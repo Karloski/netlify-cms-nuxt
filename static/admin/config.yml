@@ -40,36 +40,6 @@ collections:
               - { label: Name, name: name, widget: string }
               - { label: Icon, name: icon, widget: image }
               - { label: url, name: url, widget: string }
-      - label: Blog
-        name: blog
-        format: json
-        file: 'assets/content/settings/blog.json'
-        fields:
-          - label: Categories
-            name: categories
-            widget: list
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Icon, name: icon, widget: image, default: '/static/img/icon.svg' }
-              - { label: slug, name: slug, widget: string }
-
-  - name: 'blog'
-    label: 'Blog'
-    format: json
-    folder: assets/content/blog
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: true
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - label: 'Categories'
-        name: 'category'
-        widget: 'list'
-        hint: 'Use a comma to provide separate categories'
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Featured Image', name: 'featured_image', widget: 'image', required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'about_pages'
     label: 'About Page'
@@ -85,17 +55,14 @@ collections:
         name: "about_skills"
         file: "assets/content/pages/about/skills.json"
         fields:
-          - label: Categories
-            name: categories
+          - label: Skills
+            name: skills
             widget: list
             fields:
+              - { label: Label, name: label, widget: string }
               - { label: Name, name: name, widget: string }
-              - label: Subcategories
-                name: subcategories
-                widget: list
-                fields:
-                  - { label: Name, name: name, widget: string }
-                  - { label: Icon, name: icon, widget: image }
+              - { label: Type, name: type, widget: string }
+              - { label: Icon, name: icon, widget: image }
       - label: 'Education Page'
         name: "about_education"
         file: "assets/content/pages/about/education.json"
@@ -122,7 +89,15 @@ collections:
           widget: list
           field: { label: Image, name: image, widget: image }
         - { label: About, name: about, widget: markdown }
-        - { label: Technical, name: technical, widget: markdown }
+        - label: Tech Stack
+          name: stack
+          widget: relation
+          collection: 'about_pages'
+          file: 'about_skills'
+          search_fields: ["skills.*.name"]
+          value_field: "skills.*.name"
+          display_fields: ["skills.*.name"]
+          multiple: true
         - { label: Resources, name: resources, widget: markdown, required: false }
         - { label: 'Web Address', name: url, widget: string, required: false }
         - label: Meta

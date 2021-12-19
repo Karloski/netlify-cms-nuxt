@@ -12,7 +12,7 @@
             <font-awesome-icon icon="chevron-left" class="cursor-pointer" />
           </div>
           <h4>
-            {{ shownCategory.name }}
+            {{ shownCategory.name | startCase | pluralize }}
           </h4>
           <div v-if="selectedCategory + 1 < categories.length" class="absolute right-0" @click="move(++selectedCategory)">
             <font-awesome-icon icon="chevron-right" class="cursor-pointer" />
@@ -56,6 +56,23 @@ export default {
   async asyncData ({ context }) {
     const data = await require('@/assets/content/pages/about/skills.json')
 
+    data.categories = (data.skills.reduce((carry, item) => {
+      let obj = carry.find(a => a.name === item.type)
+
+      if (!obj) {
+        obj = {
+          name: item.type,
+          subcategories: []
+        }
+
+        carry.push(obj)
+      }
+
+      obj.subcategories.push(item)
+
+      return carry
+    }, []))
+
     return {
       ...data
     }
@@ -74,15 +91,21 @@ export default {
       return this.categories[this.selectedCategory].subcategories[this.selectedSubcat].name
     },
     examples () {
-      const regex = new RegExp(`\\b${this.subcatName}\\b`, 'i')
-
       return this.$store.state.projects.filter((p) => {
-        return regex.exec(p.technical) !== null
+        return p.stack.includes(this.subcatName)
       })
     }
   },
-  mounted () {
-    this.selectedCategory = 0
+  activated () {
+    if ('name' in this.$router.currentRoute.query) {
+      this.selectedCategory = this.categories.findIndex(c => c.subcategories.find(f => f.name.toLowerCase() === this.$router.currentRoute.query.name.toLowerCase()))
+
+      if (this.selectedCategory === -1) {
+        this.selectedCategory = 0
+      } else {
+        this.selectedSubcat = this.categories[this.selectedCategory].subcategories.findIndex(f => f.name.toLowerCase() === this.$router.currentRoute.query.name.toLowerCase())
+      }
+    }
   },
   methods: {
     move (to) {

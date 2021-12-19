@@ -5,8 +5,17 @@ import { getContent } from '../common/util'
 // Initial State
 export const appState = {
   projects: [],
-  posts: [],
-  structure: []
+  structure: [],
+  skills: {}
+}
+
+export const getters = {
+  GET_SKILL: state => (skill) => {
+    return state.skills.find(s => s.name === skill)
+  },
+  GET_SKILLS: (state) => {
+    return state.skills
+  }
 }
 
 export const mutations = {
@@ -18,21 +27,23 @@ export const mutations = {
   },
   SET_STRUCTURE: (state, payload) => {
     Vue.set(state, 'structure', payload)
+  },
+  SET_SKILLS: (state, payload) => {
+    Vue.set(state, 'skills', payload)
   }
 }
 
 export const actions = {
-  async GET_PROJECTS ({ commit }) {
+  async LOAD_PROJECTS ({ commit }) {
     const context = await require.context('@/assets/content/pages/projects/', false, /\.json$/)
     const posts = await getContent({ context, path: 'assets/content/pages/projects' })
     commit('SET_PROJECTS', posts)
   },
-  async GET_POSTS ({ commit }) {
-    // const context = await require.context('@/assets/content/blog/', false, /\.json$/)
-    // const posts = await getContent({ context, path: 'assets/content/blog' })
-    // commit('SET_POSTS', posts)
+  async LOAD_SKILLS ({ commit }) {
+    const context = await require('@/assets/content/pages/about/skills.json')
+    commit('SET_SKILLS', context.skills)
   },
-  GET_STRUCTURE ({ commit }) {
+  LOAD_STRUCTURE ({ commit }) {
     commit('SET_STRUCTURE', {
       projects: {},
       about: {
@@ -43,7 +54,7 @@ export const actions = {
     })
   },
   async nuxtServerInit ({ dispatch }) {
-    await Promise.all([dispatch('GET_PROJECTS'), dispatch('GET_POSTS'), dispatch('GET_STRUCTURE')])
+    await Promise.all([dispatch('LOAD_PROJECTS'), dispatch('LOAD_SKILLS'), dispatch('LOAD_STRUCTURE')])
   }
 }
 

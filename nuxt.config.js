@@ -61,7 +61,7 @@ export default {
   plugins: [
     '@/plugins/animateCss',
     '@/plugins/carousel',
-    '@/plugins/singulariseFilter',
+    '@/plugins/filters',
     '@/plugins/tooltip'
   ],
   /*

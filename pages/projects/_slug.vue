@@ -2,10 +2,9 @@
   <div class="projects-item flex flex-col flex-auto -my-4">
     <div class="projects-item-header py-4 w-full relative">
       <div class="bg-gray-900 mask-light w-full">
-        <!-- <client-only placeholder="Loading...">
+        <client-only placeholder="Loading...">
           <carousel :data="carouselData" />
-        </client-only> -->
-        <carousel :data="carouselData" />
+        </client-only>
       </div>
       <h2 class="absolute bottom-0 left-0 p-4 text-shadow-darkened">
         <a v-if="url" :href="url" target="_blank">
@@ -24,12 +23,14 @@
     </div>
     <div class="projects-item-technical">
       <h2 class="border-b border-current py-4 md:text-center">
-        Technical Sheet
+        Tech Stack
       </h2>
       <div class="mt-4">
         Below are the technologies and frameworks that I have been exposed to as part of this project.
       </div>
-      <div class="markdown-body md:text-center py-4" v-html="$md.render(technical)" />
+      <div v-if="stack" class="flex flex-wrap justify-start -mx-4 py-2 gap-2">
+        <Skill v-for="item in stack" :key="item" :name="item" />
+      </div>
     </div>
     <div v-if="resources && resources.length > 0" class="projects-item-resources">
       <h2 class="border-b border-current py-4 md:text-center">
@@ -37,7 +38,7 @@
       </h2>
       <div class="markdown-body md:text-center py-4" v-html="$md.render(resources)" />
     </div>
-    <div class="flex items-center relative py-4 my-4">
+    <div class="flex items-center relative py-8 md:py-4 my-4">
       <nuxt-link v-if="index > 0" :to="`/projects/${previous.slug}`" class="button flex items-center absolute left-0">
         <font-awesome-icon icon="chevron-left" />
         <span class="pl-2 md:hidden">
@@ -58,7 +59,12 @@
 </template>
 
 <script>
+import Skill from '@/components/Skill'
+
 export default {
+  components: {
+    Skill
+  },
   transition: {
     name: 'slide',
     mode: 'out-in'
