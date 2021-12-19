@@ -129,5 +129,12 @@
         }
       ]
     }
+  ],
+  "skills": [
+    {
+      "type": "Language",
+      "name": "php",
+      "icon": "/img/php.svg"
+    }
   ]
 }
