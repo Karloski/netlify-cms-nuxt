@@ -235,6 +235,11 @@
       "name": "Macintosh",
       "type": "operating system",
       "icon": "/img/mac-logo.png"
+    },
+    {
+      "name": "TypeScript",
+      "type": "language",
+      "icon": "/img/typescript_logo_2020.svg"
     }
   ]
 }
