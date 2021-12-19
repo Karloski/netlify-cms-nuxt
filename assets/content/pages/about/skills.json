@@ -168,7 +168,7 @@
     },
     {
       "name": "WordPress",
-      "type": "cms",
+      "type": "content management system",
       "icon": "/img/wordpress.svg"
     },
     {
@@ -178,7 +178,7 @@
     },
     {
       "name": "Netlify CMS",
-      "type": "cms",
+      "type": "content management system",
       "icon": "/img/netlify-cms.jpg"
     },
     {
