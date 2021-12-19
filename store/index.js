@@ -32,23 +32,13 @@ export const actions = {
     // const posts = await getContent({ context, path: 'assets/content/blog' })
     // commit('SET_POSTS', posts)
   },
-  async GET_STRUCTURE ({ commit }) {
-    const blog = await require('@/assets/content/settings/blog')
-
+  GET_STRUCTURE ({ commit }) {
     commit('SET_STRUCTURE', {
       projects: {},
       about: {
         profile: {},
         skills: {},
         contact: {}
-      },
-      blog: {
-        latest: {},
-        ...blog.categories.reduce((carry, current) => {
-          carry[current.name] = {}
-
-          return carry
-        }, {})
       }
     })
   },

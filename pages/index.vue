@@ -16,11 +16,6 @@
             About
           </nuxt-link>
         </h1>
-        <h1 class="py-4">
-          <nuxt-link ref="blog" to="blog">
-            Blog
-          </nuxt-link>
-        </h1>
       </nav>
     </div>
   </div>
