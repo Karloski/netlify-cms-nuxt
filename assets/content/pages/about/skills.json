@@ -134,117 +134,140 @@
     {
       "type": "language",
       "name": "php",
-      "icon": "/img/php.svg"
+      "icon": "/img/php.svg",
+      "label": "php"
     },
     {
       "name": "Laravel",
       "type": "framework",
-      "icon": "/img/laravel.svg"
+      "icon": "/img/laravel.svg",
+      "label": "Laravel"
     },
     {
       "name": "CSS",
       "type": "language",
-      "icon": "/img/css-3-01.svg"
+      "icon": "/img/css-3-01.svg",
+      "label": "CSS"
     },
     {
       "name": "HTML",
       "type": "language",
-      "icon": "/img/html-5-01.svg"
+      "icon": "/img/html-5-01.svg",
+      "label": "HTML"
     },
     {
       "name": "JavaScript",
       "type": "language",
-      "icon": "/img/javascript-01.svg"
+      "icon": "/img/javascript-01.svg",
+      "label": "JavaScript"
     },
     {
       "name": "MySQL",
       "type": "language",
-      "icon": "/img/mysql-01.svg"
+      "icon": "/img/mysql-01.svg",
+      "label": "MySQL"
     },
     {
       "name": "Vue",
       "type": "framework",
-      "icon": "/img/vue-js-01.svg"
+      "icon": "/img/vue-js-01.svg",
+      "label": "Vue"
     },
     {
       "name": "WordPress",
       "type": "content management system",
-      "icon": "/img/wordpress.svg"
+      "icon": "/img/wordpress.svg",
+      "label": "WordPress"
     },
     {
       "name": "Nuxt",
       "type": "framework",
-      "icon": "/img/nuxt.svg"
+      "icon": "/img/nuxt.svg",
+      "label": "Nuxt"
     },
     {
       "name": "Netlify CMS",
       "type": "content management system",
-      "icon": "/img/netlify-cms.jpg"
+      "icon": "/img/netlify-cms.jpg",
+      "label": "Netlify CMS"
     },
     {
       "name": "SCSS",
       "type": "framework",
-      "icon": "/img/sass.png"
+      "icon": "/img/sass.png",
+      "label": "SCSS"
     },
     {
       "name": "AWS",
       "type": "service",
-      "icon": "/img/aws.png"
+      "icon": "/img/aws.png",
+      "label": "Amazon Web Services"
     },
     {
       "name": "Netlify",
       "type": "service",
-      "icon": "/img/netlify.svg"
+      "icon": "/img/netlify.svg",
+      "label": "Netlify"
     },
     {
       "name": "Webpack",
       "type": "tool",
-      "icon": "/img/icon-square-small.png"
+      "icon": "/img/icon-square-small.png",
+      "label": "Webpack"
     },
     {
       "name": "npm",
       "type": "tool",
-      "icon": "/img/n.png"
+      "icon": "/img/n.png",
+      "label": "npm"
     },
     {
       "name": "Apache",
       "type": "tool",
-      "icon": "/img/apache.png"
+      "icon": "/img/apache.png",
+      "label": "Apache"
     },
     {
       "name": "Composer",
       "type": "tool",
-      "icon": "/img/composer-logo.png"
+      "icon": "/img/composer-logo.png",
+      "label": "Composer"
     },
     {
       "name": "WebSockets",
       "type": "tool",
-      "icon": "/img/websockets.gif"
+      "icon": "/img/websockets.gif",
+      "label": "WebSockets"
     },
     {
       "name": "Windows",
       "type": "operating system",
-      "icon": "/img/win-logo.gif"
+      "icon": "/img/win-logo.gif",
+      "label": "Windows"
     },
     {
       "name": "Ubuntu",
       "type": "operating system",
-      "icon": "/img/ubuntu-logo.png"
+      "icon": "/img/ubuntu-logo.png",
+      "label": "Ubuntu"
     },
     {
       "name": "Macintosh",
       "type": "operating system",
-      "icon": "/img/mac-logo.png"
+      "icon": "/img/mac-logo.png",
+      "label": "Macintosh"
     },
     {
       "name": "TypeScript",
       "type": "language",
-      "icon": "/img/typescript_logo_2020.svg"
+      "icon": "/img/typescript_logo_2020.svg",
+      "label": "TypeScript"
     },
     {
       "name": "GCP",
       "type": "service",
-      "icon": "/img/google-cloud-platform.svg"
+      "icon": "/img/google-cloud-platform.svg",
+      "label": "Google Cloud Platform"
     }
   ]
 }
