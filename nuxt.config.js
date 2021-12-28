@@ -5,7 +5,7 @@ const projects = fs.readdirSync(path.join(__dirname, '/assets/content/pages/proj
 const settings = require(path.join(__dirname, '/assets/content/settings/general.json'))
 
 let proxy = {
-  '/api/': { target: 'http://carlwithak.me.uk', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
+  '/api/': { target: 'https://carlwithak.me.uk', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
 }
 
 if ('NODE_ENV' in process.env && process.env.NODE_ENV === 'development') {
@@ -18,6 +18,7 @@ export default {
   /*
   ** Headers of the page
   */
+  target: 'static',
   head: {
     title: settings.title,
     meta: [
