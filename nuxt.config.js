@@ -2,42 +2,37 @@ import fs from 'fs'
 import path from 'path'
 
 const projects = fs.readdirSync(path.join(__dirname, '/assets/content/pages/projects'))
+const settings = require(path.join(__dirname, '/assets/content/settings/general.json'))
 
-let proxy = {}
-
-if ('NETLIFY_DEV' in process.env) {
-  proxy = {
-    '/api/': { target: 'http://localhost:8888', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
-  }
+let proxy = {
+  '/api/': { target: 'http://carlwithak.me.uk', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
 }
 
 if ('NODE_ENV' in process.env && process.env.NODE_ENV === 'development') {
   proxy = {
-    '/.netlify/functions': { target: 'http://localhost:8888', pathRewrite: { '^/.netlify/functions': '/' } },
     '/api/': { target: 'http://localhost:8888', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
   }
 }
 
 export default {
-  mode: 'universal',
   /*
   ** Headers of the page
   */
   head: {
-    title: 'Portfolio',
+    title: settings.title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/jpg', href: settings.icon }
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: settings.loadingColor },
   /*
   ** Global CSS
   */

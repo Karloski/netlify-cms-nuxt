@@ -21,7 +21,7 @@ const validateAndSanitize = (key, value) => {
   return (key in rejections) && !rejections[key].validate(value) && xss(value)
 }
 
-const sendMail = (name, email, msg) => {
+const sendMail = async (name, email, msg) => {
   const transporter = nodemailer.createTransport({
     secure: true,
     host: 'smtpout.europe.secureserver.net',
@@ -35,8 +35,8 @@ const sendMail = (name, email, msg) => {
     }
   })
 
-  return transporter.sendMail({
-    from: 'webmaster@carlwithak.me.uk',
+  return await transporter.sendMail({
+    from: 'noreply@carlwithak.me.uk',
     to: 'me@carlwithak.me.uk',
     subject: 'New contact form message',
     text: `Hi Karl.\n\nYou have a new message from ${name} (${email}).\n\nThey said:\n\n${msg}`,
@@ -57,34 +57,43 @@ exports.handler = async (event, context) => {
     }
   }
 
-  const data = JSON.parse(event.body)
-  const attributes = ['name', 'email', 'msg']
-
-  // Map each attribute name to the validated and sanitized equivalent (false if validation failed)
-  const sanitized = attributes.map(n => validateAndSanitize(n, data[n]))
-  const errors = {}
-
-  for (let i = 0; i < sanitized.length; i++) {
-    if (!sanitized[i]) {
-      errors[attributes[i]] = rejections[attributes[i]].message
-    }
-  }
-
-  if (Object.keys(errors).length > 0) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify(
-        {
-          message: 'There was an issue with the data you provided',
-          errors: {
-            ...errors
-          }
-        }
-      )
-    }
-  }
-
   try {
+    const data = JSON.parse(event.body)
+    const attributes = ['name', 'email', 'msg']
+
+    // return {
+    //   statusCode: 200,
+    //   body: JSON.stringify(data)
+    // }
+
+    if (attributes.some(n => !(n in data))) {
+      throw new Error(`One of ${attributes.toString()} not provided`)
+    }
+  
+    // Map each attribute name to the validated and sanitized equivalent (false if validation failed)
+    const sanitized = attributes.map(n => n in data && validateAndSanitize(n, data[n]))
+    const errors = {}
+  
+    for (let i = 0; i < sanitized.length; i++) {
+      if (!sanitized[i]) {
+        errors[attributes[i]] = rejections[attributes[i]].message
+      }
+    }
+  
+    if (Object.keys(errors).length > 0) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify(
+          {
+            message: 'There was an issue with the data you provided',
+            errors: {
+              ...errors
+            }
+          }
+        )
+      }
+    }
+
     await sendMail(...sanitized)
 
     return {
