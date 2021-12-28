@@ -9,7 +9,7 @@
   "author": "Karl Brown",
   "license": "ISC",
   "dependencies": {
-    "nodemailer": "^6.4.8",
+    "nodemailer": "^6.6.1",
     "validator": "^13.0.0",
     "xss": "^1.0.7"
   }
