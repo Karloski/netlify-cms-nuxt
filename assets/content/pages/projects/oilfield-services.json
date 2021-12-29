@@ -6,7 +6,12 @@
   "images": [
     "/img/ofs.jpg"
   ],
-  "resources": "",
+  "resources": [
+    {
+      "path": "http://oilfieldservices.dessol.com/",
+      "label": "Website"
+    }
+  ],
   "stack": [
     "CSS",
     "HTML",
