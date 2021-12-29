@@ -31,7 +31,7 @@
     "pluralize": "^8.0.0",
     "sparkpost": "^2.1.4",
     "v-tooltip": "^2.0.3",
-    "validator": "^13.0.0",
+    "validator": "^13.7.0",
     "vue-template-compiler": "^2.6.11",
     "xss": "^1.0.6",
     "xss-filters": "^1.2.7"
