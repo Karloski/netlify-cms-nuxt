@@ -1,0 +1,14 @@
+{
+  "icons": [
+    {
+      "name": "Github",
+      "icon": "/img/github-mark-light-32px.png",
+      "url": "https://github.com/Karloski"
+    },
+    {
+      "name": "BitBucket",
+      "url": "https://bitbucket.org/karl_brown/",
+      "icon": "/img/bitbucket.svg"
+    }
+  ]
+}
