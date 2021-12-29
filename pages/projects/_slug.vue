@@ -72,33 +72,15 @@ export default {
   layout: 'projection',
   asyncData ({ params }) {
     const data = require(`@/assets/content/pages/projects/${params.slug}`)
-    const carouselData = []
-
-    for (let id = 0; id < data.images.length; id++) {
-      carouselData.push({
-        id,
-        content (createElement, content) {
-          return createElement('img', {
-            attrs: {
-              src: data.images[id],
-              alt: data.title,
-              class: 'w-full rounded-lg object-cover h-64'
-            }
-          })
-        }
-      })
-    }
 
     return {
       url: '',
       resources: '',
-      carouselData,
       ...data
     }
   },
   data () {
     return {
-      ...this.$data,
       index: 0,
       route: {
         from: '/projects'
@@ -111,6 +93,22 @@ export default {
     },
     next () {
       return this.$store.state.projects[this.index + 1]
+    },
+    carouselData () {
+      return this.images.map((img, id) => {
+        return {
+          id,
+          content (createElement) {
+            return createElement('img', {
+              attrs: {
+                src: img,
+                alt: this.title,
+                class: 'w-full rounded-lg object-cover h-64'
+              }
+            })
+          }          
+        }
+      })
     }
   },
   created () {

@@ -46,7 +46,7 @@ export default {
   */
   plugins: [
     '@/plugins/animateCss',
-    '@/plugins/carousel',
+    { src: '@/plugins/carousel', mode: 'client' },
     '@/plugins/filters',
     '@/plugins/tooltip'
   ],
@@ -87,6 +87,7 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.resolve.alias['vue'] = 'vue/dist/vue.common'
     }
   },
   router: {
