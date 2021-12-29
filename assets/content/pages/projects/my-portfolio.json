@@ -6,7 +6,16 @@
   "images": [
     "/img/portfolio.jpg"
   ],
-  "resources": "",
+  "resources": [
+    {
+      "path": "https://carlwithak.me.uk",
+      "label": "Website"
+    },
+    {
+      "path": "https://github.com/Karloski/netlify-cms-nuxt",
+      "label": "Github Page"
+    }
+  ],
   "stack": [
     "Netlify",
     "Netlify CMS",
