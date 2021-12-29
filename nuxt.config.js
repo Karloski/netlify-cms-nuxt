@@ -4,16 +4,6 @@ import path from 'path'
 const projects = fs.readdirSync(path.join(__dirname, '/assets/content/pages/projects'))
 const settings = require(path.join(__dirname, '/assets/content/settings/general.json'))
 
-let proxy = {
-  '/api/': { target: 'https://carlwithak.me.uk', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
-}
-
-if ('NODE_ENV' in process.env && process.env.NODE_ENV === 'development') {
-  proxy = {
-    '/api/': { target: 'http://localhost:8888', pathRewrite: { '^/api/(.*)': '/.netlify/functions/$1' } }
-  }
-}
-
 export default {
   /*
   ** Headers of the page
@@ -97,9 +87,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    proxy: true
   },
-  proxy,
   /*
   ** Build configuration
   */
