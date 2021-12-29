@@ -6,7 +6,7 @@
   "images": [
     "/img/portfolio.jpg"
   ],
-  "resources": "* [Github Page](https://github.com/Karloski/netlify-cms-nuxt)",
+  "resources": "",
   "stack": [
     "Netlify",
     "Netlify CMS",
