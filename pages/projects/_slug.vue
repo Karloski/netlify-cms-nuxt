@@ -36,7 +36,13 @@
       <h2 class="border-b border-current py-4 md:text-center">
         Resources
       </h2>
-      <div class="markdown-body md:text-center py-4" v-html="$md.render(resources)" />
+      <ul class="flex flex-col py-4">
+        <li v-for="(resource, index) in resources" :key="index" class="py-2">
+          <a :href="resource.path" target="_blank">
+            <font-awesome-icon icon="external-link-alt" /> <span>{{ resource.label }}</span>
+          </a>
+        </li>
+      </ul>
     </div>
     <div class="flex items-center relative py-8 md:py-4 my-4">
       <nuxt-link v-if="index > 0" :to="`/projects/${previous.slug}`" class="button flex items-center absolute left-0">
@@ -120,6 +126,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.project {
+  &-item {
+    &-header {
+      @media all and (min-width: 767px) {
+        &:hover img {
+          height: 32rem;
+        }
+
+        img {
+          transition: height 0.25s ease;
+        }
+      }
+    }
+
+    &-resources {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 img {
   width: 100%;
 }

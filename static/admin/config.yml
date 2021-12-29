@@ -98,7 +98,13 @@ collections:
           value_field: "skills.*.name"
           display_fields: ["skills.*.name"]
           multiple: true
-        - { label: Resources, name: resources, widget: markdown, required: false }
+        - label: Resources
+          name: resources
+          widget: list
+          required: false
+          fields:
+            - { label: Path, name: path, widget: string }
+            - { label: Label, name: label, widget: string }
         - { label: 'Web Address', name: url, widget: string, required: false }
         - label: Meta
           name: meta

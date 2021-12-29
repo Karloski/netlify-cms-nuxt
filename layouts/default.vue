@@ -47,26 +47,4 @@
 }
 
 .svg-inline--fa {} .fa-chevron-right {} .fa-w-10 {}
-
-.projects {
-  &-item {
-    &-header {
-      @media all and (min-width: 767px) {
-        &:hover img {
-          height: 32rem;
-        }
-
-        img {
-          transition: height 0.25s ease;
-        }
-      }
-    }
-
-    &-resources {
-      a, a:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
 </style>

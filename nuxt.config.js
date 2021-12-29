@@ -70,7 +70,7 @@ export default {
   },
   fontawesome: {
     icons: {
-      solid: ['faChevronRight', 'faChevronLeft', 'faSpinner']
+      solid: ['faChevronRight', 'faChevronLeft', 'faSpinner', 'faExternalLinkAlt']
     }
   },
   /*
