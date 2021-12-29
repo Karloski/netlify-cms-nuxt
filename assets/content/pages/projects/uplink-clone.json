@@ -5,7 +5,7 @@
   ],
   "about": "This project was inspired by a very old video game (Uplink) I played during my youth and a desire to better understand WebSockets, Laravel and the web development ecosystem.\n\nConduit, like Uplink, puts you in a role as a hacker looking to infiltrate other systems using programs and your knowledge of the game system. Conduit itself was intended to be massively multiplayer, incorporating websockets to allow the app to run in real-time.\n\nThe game is still very much in alpha and in suspended development for the foreseeable future. It is not currently available for live viewing, but you can find the source code on Bitbucket.",
   "technical": "* Laravel\n* WebSockets\n* Virtual Machines (for local Linux testing)\n  * Vagrant\n* JavaScript\n  * Typescript\n  * Vue\n* PHP\n   * Composer\n* Linux (Ubuntu)\n   * Apache",
-  "resources": "* [Source Code](https://bitbucket.org/karl_brown/uplink/src/master/)",
+  "resources": "",
   "url": "https://bitbucket.org/karl_brown/uplink/src/master/",
   "stack": [
     "php",
