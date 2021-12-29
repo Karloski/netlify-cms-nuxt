@@ -124,7 +124,7 @@ export default {
   &-examples {
     &-item {
       > div {
-        max-height: 16rem;
+        height: clamp(8rem, 50vw, 16rem);
 
         &:hover {
           .skills-examples-mask {

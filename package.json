@@ -16,36 +16,20 @@
     "@chenfengyuan/vue-carousel": "^1.0.5",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@nuxtjs/axios": "^5.10.3",
-    "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/fontawesome": "^1.1.2",
-    "@nuxtjs/markdownit": "^1.2.9",
-    "@nuxtjs/proxy": "^2.0.0",
-    "@nuxtjs/pwa": "^3.0.0-0",
-    "animate.css": "^3.7.2",
-    "express": "^4.17.1",
-    "github-markdown-css": "^4.0.0",
+    "@nuxtjs/markdownit": "^2.0.0",
+    "animate.css": "^4.1.1",
+    "github-markdown-css": "^5.1.0",
     "lodash": "^4.17.21",
-    "netlify-lambda": "^1.6.3",
-    "nodemailer": "^6.4.8",
     "nuxt": "^2.12.2",
     "pluralize": "^8.0.0",
-    "sparkpost": "^2.1.4",
     "v-tooltip": "^2.0.3",
-    "validator": "^13.0.0",
-    "vue-template-compiler": "^2.6.11",
-    "xss": "^1.0.6",
-    "xss-filters": "^1.2.7"
+    "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.2.0",
-    "@nuxtjs/stylelint-module": "^3.1.0",
-    "@nuxtjs/tailwindcss": "^1.4.1",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": "^0.5.2",
+    "@nuxtjs/tailwindcss": "^4.2.1",
+    "netlify-lambda": "^2.0.15",
     "node-sass": "^6.0.0",
-    "sass-loader": "^10.0.0",
-    "stylelint": "^10.1.0"
+    "sass-loader": "^10.0.0"
   }
 }

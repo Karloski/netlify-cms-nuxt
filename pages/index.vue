@@ -29,7 +29,9 @@ export default {
     }
   },
   beforeRouteLeave (to, from, next) {
-    this.animateCss(this.$refs[to.name].$el, 'flash').then(() => {
+    this.animateCss(this.$refs[to.name].$el, 'animate__flash').catch((err) => {
+      console.log(err)
+    }).finally(() => {
       next()
     })
   }

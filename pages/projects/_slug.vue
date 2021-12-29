@@ -139,4 +139,10 @@ button, .button {
     color: inherit;
   }
 }
+
+.projects-item {
+  .markdown-body {
+    background: transparent;
+  }
+}
 </style>

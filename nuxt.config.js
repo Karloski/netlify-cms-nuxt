@@ -54,10 +54,6 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome'
@@ -66,12 +62,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
-    // '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    // '@nuxtjs/dotenv',
     '@nuxtjs/markdownit'
   ],
   markdownit: {

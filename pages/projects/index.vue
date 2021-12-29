@@ -46,7 +46,6 @@ export default {
   },
   layout: 'projection',
   computed: {
-    /* eslint object-shorthand: "off" */
     projects () {
       return this.$store.state.projects
     }
@@ -57,14 +56,9 @@ export default {
 <style scoped lang="scss">
 .projects {
   &-item {
-    // &-excerpt {
-    //   @media all and (min-width: 768px) {
-    //     flex: 1 1 36rem;
-    //   }
-    // }
 
     > div {
-      height: 16rem;
+      height: clamp(8rem, 50vw, 16rem);
 
       &:hover {
         .projects-item-mask {

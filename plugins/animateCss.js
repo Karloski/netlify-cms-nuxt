@@ -4,7 +4,11 @@ Vue.mixin({
   methods: {
     animateCss (node, animationName) {
       return new Promise((resolve, reject) => {
-        node.classList.add('animated', animationName)
+        setTimeout(() => {
+          reject('Operation timed out')
+        }, 2000)
+
+        node.classList.add('animate__animated', animationName)
 
         function handleAnimationEnd () {
           node.classList.remove('animated', animationName)
