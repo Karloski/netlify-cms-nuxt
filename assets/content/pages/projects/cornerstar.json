@@ -7,7 +7,7 @@
   "url": "https://www.cornerstaraluminium.com/",
   "technical": "* PHP\r\n* WordPress\r\n* HTML5\r\n* CSS3\r\n* Linux (Ubuntu)\n   * Apache\n* AWS (Amazon Web Services)\n   * Route 53\n* MySQL",
   "about": "The Cornerstar Aluminium website is a WordPress website written in PHP. It was implemented using the Trade theme from ThemeForest and was designed by our external designer. It has approximately 25 pages, including a homepage, a contact us page and several product pages.\n\nI was the project lead and developer for this website and was responsible for its complete implementation and delivery.",
-  "resources": "* [Website](https://cornerstaraluminium.com)\n* [Trade Theme from ThemeForest](https://themeforest.net/item/trade-modern-classified-ads-wordpress-theme/20353321)",
+  "resources": "",
   "stack": [
     "php",
     "WordPress",
