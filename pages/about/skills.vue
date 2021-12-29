@@ -8,15 +8,11 @@
     <div class="flex flex-auto -mx-4">
       <div class="flex flex-col flex-auto -my-2 py-2">
         <div class="flex justify-center items-center mx-auto w-full max-w-lg py-2 relative">
-          <div v-if="selectedCategory > 0" class="absolute left-0" @click="move(--selectedCategory)">
-            <font-awesome-icon icon="chevron-left" class="cursor-pointer" />
-          </div>
-          <h4>
-            {{ shownCategory.name | startCase | pluralize }}
-          </h4>
-          <div v-if="selectedCategory + 1 < categories.length" class="absolute right-0" @click="move(++selectedCategory)">
-            <font-awesome-icon icon="chevron-right" class="cursor-pointer" />
-          </div>
+          <select v-model="selectedCategory" @change="selectedSubcat = 0">
+            <option v-for="(category, index) in categories" :key="category.name" :value="index">
+              {{ category.name | startCase | pluralize }}
+            </option>
+          </select>
         </div>
         <div class="skills-subcat flex flex-wrap justify-center -mx-4 py-2">
           <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" v-tooltip="subcat.name" class="m-4 bg-white rounded-full">
@@ -32,7 +28,7 @@
               <transition-group name="gallery" tag="div" class="skills-examples-item flex flex-wrap flex-auto w-full justify-center content-start items-start">
                 <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${example.images[0]})`">
                   <div class="skills-examples-mask flex items-center justify-center w-full h-full absolute transform translate-y-full">
-                    <nuxt-link :to="`/projects/${example.slug}`" class="px-6 py-4 bg-transparent border rounded-lg">
+                    <nuxt-link :to="`/projects/${example.slug}`" class="px-6 py-4 bg-transparent border rounded-lg button">
                       View Project
                     </nuxt-link>
                   </div>
@@ -121,6 +117,19 @@ export default {
 
 <style lang="scss" scoped>
 .skills {
+  select {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    color: #DBAB00;
+
+    option {
+      color: white;
+      background: #3d275e;
+    }
+  }
+
   &-examples {
     &-item {
       > div {
@@ -137,16 +146,6 @@ export default {
     &-mask {
       background: #170122bd;
       transition: transform 500ms ease;
-
-      a {
-        border-color: #DBAB00;
-      }
-
-      a:hover {
-        background: #DBAB00;
-        text-shadow: none;
-        color: white;
-      }
     }
   }
 

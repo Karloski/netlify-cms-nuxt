@@ -137,8 +137,4 @@ export default {
     }
   }
 }
-
-button, .button {
-  background: #DBAB00;
-}
 </style>

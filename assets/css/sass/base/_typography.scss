@@ -47,3 +47,22 @@ p {
     word-break: break-word;
     word-wrap: break-word;
 }
+
+button, .button {
+    background: transparent;
+    color: #DBAB00;
+    border: 1px solid;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.25s ease-in-out;
+  
+    &:hover {
+      background: #DBAB00;
+      text-shadow: none;
+      color: black;    
+    }
+  
+    * {
+      color: inherit;
+    }
+  }

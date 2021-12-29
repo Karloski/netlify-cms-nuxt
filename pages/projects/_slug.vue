@@ -45,9 +45,6 @@
           {{ previous.title }}
         </span>
       </nuxt-link>
-      <a class="button absolute absolute-center-x cursor-pointer" @click.prevent="$router.push({ path: route.from })">
-        Back
-      </a>
       <nuxt-link v-if="index < $store.state.projects.length - 1" :to="`/projects/${next.slug}`" class="button flex items-center absolute right-0">
         <span class="pr-2 md:hidden">
           {{ next.title }}
@@ -125,17 +122,6 @@ export default {
 <style scoped lang="scss">
 img {
   width: 100%;
-}
-
-button, .button {
-  background: #DBAB00;
-  color: black;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-
-  * {
-    color: inherit;
-  }
 }
 
 .projects-item {

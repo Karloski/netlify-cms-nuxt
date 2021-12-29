@@ -7,7 +7,7 @@
       <transition-group v-if="projects.length > 0" name="gallery" tag="div" class="projects-item flex flex-wrap flex-auto w-full justify-center content-evenly">
         <div v-for="project in projects" :key="project.title" class="relative overflow-hidden w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${project.images[0]})`">
           <div class="projects-item-mask flex items-center justify-center h-full w-full absolute transform translate-y-full">
-            <nuxt-link :to="`/projects/${project.slug}`" class="px-6 py-4 bg-transparent border rounded-lg">
+            <nuxt-link :to="`/projects/${project.slug}`" class="px-6 py-4 bg-transparent border rounded-lg button">
               View Project
             </nuxt-link>
           </div>
@@ -70,16 +70,6 @@ export default {
     &-mask {
       background: #170122bd;
       transition: transform 500ms ease;
-
-      a {
-        border-color: #DBAB00;
-      }
-
-      a:hover {
-        background: #DBAB00;
-        text-shadow: none;
-        color: white;
-      }
     }
   }
 }
