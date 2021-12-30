@@ -28,7 +28,43 @@
       "alt": "MailBigFile Homepage",
       "images": [
         {
-          "source": "/img/mailbigfile_home.jpg"
+          "source": "/img/mbf-homepage.webp"
+        },
+        {
+          "source": "/img/mbf-homepage.png"
+        }
+      ]
+    },
+    {
+      "alt": "MailBigFile Free Service",
+      "images": [
+        {
+          "source": "/img/mbf-freeservice.webp"
+        },
+        {
+          "source": "/img/mbf-freeservice.png"
+        }
+      ]
+    },
+    {
+      "alt": "MailBigFile Pro Service",
+      "images": [
+        {
+          "source": "/img/mbf-proservice.webp"
+        },
+        {
+          "source": "/img/mbf-proservice.png"
+        }
+      ]
+    },
+    {
+      "alt": "MailBigFile Pro Page",
+      "images": [
+        {
+          "source": "/img/mbf-propage.webp"
+        },
+        {
+          "source": "/img/mbf-propage.png"
         }
       ]
     }
