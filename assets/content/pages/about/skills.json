@@ -272,7 +272,7 @@
     {
       "label": "Google Firestore",
       "name": "Firestore",
-      "type": "Google Cloud Platform",
+      "type": "database",
       "icon": "/img/daco_3877090.png"
     },
     {
