@@ -20,5 +20,14 @@
     "Ubuntu",
     "Apache",
     "MySQL"
+  ],
+  "carouselData": [
+    {
+      "images": [
+        {
+          "source": "/img/entragen-aboutus.webp"
+        }
+      ]
+    }
   ]
 }
