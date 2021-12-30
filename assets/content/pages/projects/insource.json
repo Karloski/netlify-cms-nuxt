@@ -1,0 +1,60 @@
+{
+  "title": "Insource",
+  "carouselItems": [
+    {
+      "alt": "Insource Homepage",
+      "images": [
+        {
+          "source": "/img/insource-homepage.webp"
+        },
+        {
+          "source": "/img/insource-homepage.png"
+        }
+      ]
+    },
+    {
+      "alt": "Insource About Us",
+      "images": [
+        {
+          "source": "/img/insource-aboutus.webp"
+        },
+        {
+          "source": "/img/insource-aboutus.png"
+        }
+      ]
+    },
+    {
+      "alt": "Insource Insights",
+      "images": [
+        {
+          "source": "/img/insource-insights.webp"
+        },
+        {
+          "source": "/img/insource-insights.png"
+        }
+      ]
+    },
+    {
+      "alt": "Insource Technology",
+      "images": [
+        {
+          "source": "/img/insource-technology.webp"
+        },
+        {
+          "source": "/img/insource-technology.png"
+        }
+      ]
+    }
+  ],
+  "about": "The Insource website is a WordPress website written in PHP. It was implemented using the Divi theme and was designed by an external designer.\n\nIt has approximately 30 pages, including a: homepage; blog; contact us page and several product pages.\n\nI was the project lead and developer for this website and was responsible for its complete implementation and delivery.",
+  "stack": [
+    "php",
+    "HTML",
+    "CSS",
+    "MySQL",
+    "JavaScript",
+    "WordPress",
+    "Ubuntu"
+  ],
+  "url": "https://www.insource.co.uk"
+}
