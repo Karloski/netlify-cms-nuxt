@@ -29,7 +29,7 @@
             </div>
           </div>
         </div>
-        <div class="footer flex gap-x-4">
+        <div class="footer flex gap-x-4 justify-center">
           <a v-for="icon in $store.state.social" :key="icon.name" :href="icon.url" target="_blank">
             <img :src="icon.icon" :alt="icon.name" class="icon" :title="icon.name" />
           </a>

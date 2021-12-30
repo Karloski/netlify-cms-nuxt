@@ -9,13 +9,13 @@
       <div class="flex flex-col flex-auto py-2">
         <div class="flex justify-center items-center mx-auto w-full max-w-lg py-2 relative">
           <select v-model="selectedCategory" @change="selectedSubcat = 0">
-            <option v-for="(category, index) in categories" :key="category.name" :value="index">
+            <option v-for="(category, index) in catsWithExamples" :key="category.name" :value="index">
               {{ category.name | startCase | pluralize }}
             </option>
           </select>
         </div>
         <div class="skills-subcat flex flex-wrap justify-center py-2">
-          <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" v-tooltip="subcat.name" class="m-4 bg-white rounded-full">
+          <div v-for="(subcat, subindex) in subcatsWithExamples" :key="subcat.name" v-tooltip="subcat.name" class="m-4 bg-white rounded-full">
             <img :src="subcat.icon" :alt="subcat.name" :class="'icon-l cursor-pointer rounded-full' + (selectedSubcat === subindex ? ' skills-subcat-selected' : '')" @click="selectedSubcat = subindex">
           </div>
         </div>
@@ -90,7 +90,13 @@ export default {
       return this.$store.state.projects.filter((p) => {
         return p.stack.includes(this.subcatName)
       })
-    }
+    },
+    catsWithExamples () {
+      return this.categories.filter(c => c.subcategories.find(sc => this.$store.state.projects.find(p => p.stack.includes(sc.name))))
+    },
+    subcatsWithExamples () {
+      return this.shownCategory.subcategories.filter(c => this.$store.state.projects.find(p => p.stack.includes(c.name)))
+    }    
   },
   activated () {
     if ('name' in this.$router.currentRoute.query) {
@@ -102,6 +108,8 @@ export default {
         this.selectedSubcat = this.categories[this.selectedCategory].subcategories.findIndex(f => f.name.toLowerCase() === this.$router.currentRoute.query.name.toLowerCase())
       }
     }
+
+    // console.log(this.shownCategory.subcategories, this.subcatsWithExamples)
   },
   methods: {
     move (to) {

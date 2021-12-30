@@ -13,27 +13,6 @@
           </div>
         </div>
       </transition-group>
-
-      <!-- <transition-group name="list" tag="div">
-        <div v-for="project in projects" :key="project.title" class="projects-item flex flex-wrap md:flex-col md:items-center justify-center -mx-4 py-4">
-          <nuxt-link :to="`/projects/${project.slug}`" class="flex-initial hover:background-tiertiary hover:mask py-4">
-            <img class="md:w-full max-w-xl px-4 transition duration-700 md:py-4" :src="project.images[0]" :alt="project.title">
-          </nuxt-link>
-          <div class="projects-item-excerpt flex-auto md:text-center p-4 -my-4">
-            <h4 class="py-4">
-              <nuxt-link :to="`/projects/${project.slug}`">
-                {{ project.title }}
-              </nuxt-link>
-            </h4>
-            <p class="markdown-body py-4" v-html="$md.render(excerpt(project.about, 300))" />
-            <p class="py-4">
-              <nuxt-link :to="`/projects/${project.slug}`">
-                Read More...
-              </nuxt-link>
-            </p>
-          </div>
-        </div>
-      </transition-group> -->
     </div>
   </div>
 </template>
@@ -45,6 +24,11 @@ export default {
     mode: 'out-in'
   },
   layout: 'projection',
+  data () {
+    return {
+      title: 'Projects'
+    }
+  },
   computed: {
     projects () {
       return this.$store.state.projects

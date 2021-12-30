@@ -16,13 +16,13 @@
       </h2>
     </div>
     <div class="projects-item-about">
-      <h2 class="border-b border-current py-4 md:text-center">
+      <h2 class="border-b border-current py-4">
         About this project
       </h2>
-      <div class="markdown-body md:text-center py-4" v-html="$md.render(about)" />
+      <div class="markdown-body py-4" v-html="$md.render(about)" />
     </div>
     <div class="projects-item-technical">
-      <h2 class="border-b border-current py-4 md:text-center">
+      <h2 class="border-b border-current py-4">
         Tech Stack
       </h2>
       <div class="mt-4">
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div v-if="resources && resources.length > 0" class="projects-item-resources">
-      <h2 class="border-b border-current py-4 md:text-center">
+      <h2 class="border-b border-current py-4">
         Resources
       </h2>
       <ul class="flex flex-col py-4">
