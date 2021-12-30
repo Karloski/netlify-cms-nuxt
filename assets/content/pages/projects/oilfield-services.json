@@ -4,6 +4,9 @@
       "imageset": [
         {
           "source": "/img/entragen-aboutus.webp"
+        },
+        {
+          "source": "/img/entragen-aboutus.png"
         }
       ],
       "alt": "Entragen About Us Page"
