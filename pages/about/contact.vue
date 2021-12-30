@@ -5,9 +5,9 @@
         Contact Me
       </h1>
     </div>
-    <div class="flex flex-col flex-auto justify-center items-center py-4 -my-8">
-      <form class="w-full max-w-lg" @submit.prevent>
-        <div v-if="Object.keys(form.errors).length > 0" class="bg-red-700 text-white p-4 mb-6 rounded">
+    <div class="flex flex-col flex-auto justify-center items-center py-4">
+      <form class="flex flex-col gap-y-6 w-full max-w-lg" @submit.prevent="onSubmit">
+        <div v-if="Object.keys(form.errors).length > 0" class="bg-red-700 text-white p-4 rounded">
           <span class="block mb-4">There were some issues with the information you provided</span>
           <ul class="-my-2">
             <li v-for="(value, key) in form.errors" :key="key" class="py-2">
@@ -15,10 +15,10 @@
             </li>
           </ul>
         </div>
-        <div v-if="form.success.length > 0" class="bg-green-700 text-white p-4 mb-6 rounded">
+        <div v-if="form.success.length > 0" class="bg-green-700 text-white p-4 rounded">
           <span>{{ form.success }}</span>
         </div>
-        <div class="flex w-full mb-6">
+        <div class="flex w-full">
           <div class="input-item flex-auto relative">
             <input v-model="form.attributes.name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded p-6 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text">
             <span :class="(form.attributes.name ? 'placeholder-active ' : '' ) + 'placeholder absolute absolute-center-y text-gray-500 p-4'" @click="focus($event.target.previousElementSibling)">
@@ -26,7 +26,7 @@
             </span>
           </div>
         </div>
-        <div class="flex w-full mb-6">
+        <div class="flex w-full">
           <div class="input-item flex-auto relative">
             <input v-model="form.attributes.email" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded p-6 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email">
             <span :class="(form.attributes.email ? 'placeholder-active ' : '' ) + 'placeholder absolute absolute-center-y text-gray-500 p-4'" @click="focus($event.target.previousElementSibling)">
@@ -34,7 +34,7 @@
             </span>
           </div>
         </div>
-        <div class="flex w-full mb-6">
+        <div class="flex w-full">
           <div class="input-item flex-auto relative">
             <textarea v-model="form.attributes.msg" class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded p-6 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" />
             <span :class="(form.attributes.msg ? 'placeholder-active ' : '' ) + 'placeholder absolute top-0 p-4 text-gray-500'" @click="focus($event.target.previousElementSibling)">
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="form-submit-group flex justify-center items-center">
-          <button class="button text-black p-4 w-full rounded cursor-pointer" @click="onSubmit">
+          <button class="button text-black p-4 w-full rounded cursor-pointer">
             <font-awesome-icon v-if="form.submitting" class="self-center text-white fa-pulse" icon="spinner" />
             <span v-else>Submit</span>
           </button>
@@ -92,7 +92,11 @@ export default {
 
         this.form.success = 'Thanks for getting in touch!'
       } catch (e) {
-        this.form.errors = e.response.data.errors
+        if ('response' in e) {
+          this.form.errors = e.response.data.errors
+        } else {
+          this.form.errors = [e.message]
+        }
       } finally {
         this.form.submitting = false
       }

@@ -6,7 +6,8 @@ import { getContent } from '../common/util'
 export const appState = {
   projects: [],
   structure: [],
-  skills: {}
+  skills: {},
+  social: []
 }
 
 export const getters = {
@@ -15,6 +16,9 @@ export const getters = {
   },
   GET_SKILLS: (state) => {
     return state.skills
+  },
+  GET_SOCIAL: (state) => {
+    return state.social
   }
 }
 
@@ -30,6 +34,9 @@ export const mutations = {
   },
   SET_SKILLS: (state, payload) => {
     Vue.set(state, 'skills', payload)
+  },
+  SET_SOCIAL: (state, payload) => {
+    Vue.set(state, 'social', payload)
   }
 }
 
@@ -43,6 +50,10 @@ export const actions = {
     const context = await require('@/assets/content/pages/about/skills.json')
     commit('SET_SKILLS', context.skills)
   },
+  async LOAD_SOCIAL ({ commit }) {
+    const context = await require('@/assets/content/settings/social.json')
+    commit('SET_SOCIAL', context.icons)
+  },
   LOAD_STRUCTURE ({ commit }) {
     commit('SET_STRUCTURE', {
       projects: {},
@@ -54,7 +65,12 @@ export const actions = {
     })
   },
   async nuxtServerInit ({ dispatch }) {
-    await Promise.all([dispatch('LOAD_PROJECTS'), dispatch('LOAD_SKILLS'), dispatch('LOAD_STRUCTURE')])
+    await Promise.all([
+      dispatch('LOAD_PROJECTS'), 
+      dispatch('LOAD_SKILLS'), 
+      dispatch('LOAD_STRUCTURE'),
+      dispatch('LOAD_SOCIAL')
+    ])
   }
 }
 

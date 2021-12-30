@@ -11,7 +11,7 @@
         <div class="flex flex-auto py-12">
           <div class="flex flex-col flex-auto items-center -my-4">
             <h3 v-for="(children, page) of nav.items" :key="page" class="py-4 capitalize">
-              <div v-if="Object.keys(children).length > 0" @click="nav.parent.items = nav.items; nav.parent.name = page; nav.items = children;">
+              <div v-if="Object.keys(children).length > 0" @click="nav.parent.items = nav.items; nav.parent.name = page; nav.items = children;" class="cursor-pointer">
                 <span>{{ page }}</span>
                 <span>></span>
               </div>
@@ -25,14 +25,14 @@
               </div>
             </h3>
             <div v-if="nav.parent.name" class="py-4" @click="nav.items = nav.parent.items; nav.parent = { items: {}, name: '' };">
-              <h3>Back</h3>
+              <h3 class="cursor-pointer">Back</h3>
             </div>
           </div>
         </div>
-        <div class="footer flex justify-between">
-          <span>FB</span>
-          <span>Twitter</span>
-          <span>Github</span>
+        <div class="footer flex gap-x-4">
+          <a v-for="icon in $store.state.social" :key="icon.name" :href="icon.url" target="_blank">
+            <img :src="icon.icon" :alt="icon.name" class="icon" :title="icon.name" />
+          </a>
         </div>
       </Sidebar>
     </div>
@@ -62,10 +62,10 @@
     <div class="content flex flex-auto rounded my-8 overflow-auto w-7/10 xl:w-full">
       <nuxt keep-alive class="p-8 md:px-4 md:py-0" />
     </div>
-    <div class="footer -mx-4 md:hidden">
-      <span class="px-4">FB</span>
-      <span class="px-4">Twitter</span>
-      <span class="px-4">Github</span>
+    <div class="flex gap-x-4 footer px-2 md:hidden">
+      <a v-for="icon in $store.state.social" :key="icon.name" :href="icon.url" target="_blank">
+        <img :src="icon.icon" :alt="icon.name" class="icon" :title="icon.name" />
+      </a>
     </div>
   </div>
 </template>
@@ -118,6 +118,12 @@ export default {
     max-height: 0;
     padding: 0;
     border: 0;
+  }
+
+  .footer {
+    a {
+      
+    }
   }
 
   .subnav {
