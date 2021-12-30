@@ -1,5 +1,50 @@
 {
-  "carouselItems": [],
+  "carouselItems": [
+    {
+      "alt": "Entragen Home Page",
+      "images": [
+        {
+          "source": "/img/entragen-homepage.webp"
+        },
+        {
+          "source": "/img/entragen-homepage.png"
+        }
+      ]
+    },
+    {
+      "images": [
+        {
+          "source": "/img/entragen-aboutus.webp"
+        },
+        {
+          "source": "/img/entragen-aboutus.png"
+        }
+      ],
+      "alt": "Entragen About Us Page"
+    },
+    {
+      "alt": "Entragen News Page",
+      "images": [
+        {
+          "source": "/img/entragen-news.webp"
+        },
+        {
+          "source": "/img/entragen-news.png"
+        }
+      ]
+    },
+    {
+      "alt": "Entragen Jobs Page",
+      "images": [
+        {
+          "source": "/img/entragen-jobs.webp"
+        },
+        {
+          "source": "/img/entragen-jobs.png"
+        }
+      ]
+    }
+  ],
   "resources": [
     {
       "path": "https://www.entragen.com/",
