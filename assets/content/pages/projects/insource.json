@@ -57,5 +57,15 @@
     "Ubuntu",
     "Divi"
   ],
-  "url": "https://www.insource.co.uk"
+  "url": "https://www.insource.co.uk",
+  "resources": [
+    {
+      "path": "https://www.insource.co.uk",
+      "label": "Website"
+    },
+    {
+      "label": "Elegant Themes (Divi Theme)",
+      "path": "https://www.elegantthemes.com/"
+    }
+  ]
 }
