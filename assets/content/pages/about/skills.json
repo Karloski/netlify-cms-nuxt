@@ -274,6 +274,12 @@
       "name": "Firestore",
       "type": "Google Cloud Platform",
       "icon": "/img/daco_3877090.png"
+    },
+    {
+      "label": "Divi",
+      "name": "Divi",
+      "type": "framework",
+      "icon": "/img/divi-logo.svg"
     }
   ]
 }
