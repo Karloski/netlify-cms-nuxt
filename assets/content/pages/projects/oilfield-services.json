@@ -21,13 +21,5 @@
     "Apache",
     "MySQL"
   ],
-  "carouselData": [
-    {
-      "imageset": [
-        {
-          "source": "/img/entragen-aboutus.webp"
-        }
-      ]
-    }
-  ]
+  "carouselData": []
 }
