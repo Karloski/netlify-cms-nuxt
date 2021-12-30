@@ -4,7 +4,43 @@
       "alt": "Runners Homepage",
       "images": [
         {
-          "source": "/img/runners-home.jpg"
+          "source": "/img/runners-homepage.webp"
+        },
+        {
+          "source": "/img/runners-homepage.png"
+        }
+      ]
+    },
+    {
+      "alt": "Runners Search",
+      "images": [
+        {
+          "source": "/img/runners-search.webp"
+        },
+        {
+          "source": "/img/runners-search.png"
+        }
+      ]
+    },
+    {
+      "alt": "Runners Add Activity",
+      "images": [
+        {
+          "source": "/img/runners-addactivity.webp"
+        },
+        {
+          "source": "/img/runners-addactivity.png"
+        }
+      ]
+    },
+    {
+      "alt": "Runners Update Activity",
+      "images": [
+        {
+          "source": "/img/runners-addingrun.webp"
+        },
+        {
+          "source": "/img/runners-addingrun.png"
         }
       ]
     }
