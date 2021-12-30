@@ -1,9 +1,9 @@
 <template>
-  <div class="projects flex flex-col flex-auto -my-4">
+  <div class="projects flex flex-col flex-auto">
     <h1 class="text-center py-4">
       My Projects
     </h1>
-    <div class="projects-list flex flex-auto justify-center items-center py-4">
+    <div class="projects-list flex flex-auto overflow-auto justify-center items-start py-4">
       <transition-group v-if="projects.length > 0" name="gallery" tag="div" class="projects-item flex flex-wrap flex-auto w-full justify-center content-evenly">
         <div v-for="project in projects" :key="project.title" class="relative overflow-hidden w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${project.images[0]})`">
           <div class="projects-item-mask flex items-center justify-center h-full w-full absolute transform translate-y-full">

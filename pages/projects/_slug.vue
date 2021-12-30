@@ -151,10 +151,4 @@ export default {
 img {
   width: 100%;
 }
-
-.projects-item {
-  .markdown-body {
-    background: transparent;
-  }
-}
 </style>

@@ -1,12 +1,12 @@
 <template>
-  <div class="skills flex flex-col flex-auto -my-4 relative md:static">
+  <div class="skills flex flex-col flex-auto relative md:static">
     <div class="relative text-center py-4 md:static">
       <h1>
         Skills
       </h1>
     </div>
-    <div class="flex flex-auto -mx-4">
-      <div class="flex flex-col flex-auto -my-2 py-2">
+    <div class="flex flex-auto overflow-auto">
+      <div class="flex flex-col flex-auto py-2">
         <div class="flex justify-center items-center mx-auto w-full max-w-lg py-2 relative">
           <select v-model="selectedCategory" @change="selectedSubcat = 0">
             <option v-for="(category, index) in categories" :key="category.name" :value="index">
@@ -14,17 +14,17 @@
             </option>
           </select>
         </div>
-        <div class="skills-subcat flex flex-wrap justify-center -mx-4 py-2">
+        <div class="skills-subcat flex flex-wrap justify-center py-2">
           <div v-for="(subcat, subindex) in shownCategory.subcategories" :key="subcat.name" v-tooltip="subcat.name" class="m-4 bg-white rounded-full">
             <img :src="subcat.icon" :alt="subcat.name" :class="'icon-l cursor-pointer rounded-full' + (selectedSubcat === subindex ? ' skills-subcat-selected' : '')" @click="selectedSubcat = subindex">
           </div>
         </div>
         <transition name="fade">
-          <div v-if="examples.length > 0" class="flex flex-auto flex-col justify-center my-4">
+          <div v-if="examples.length > 0" class="flex flex-auto flex-col overflow-auto my-4">
             <div class="flex justify-center my-2">
               <h4>Examples</h4>
             </div>
-            <div class="skills-examples flex flex-col flex-auto items-center justify-start my-4 text-center">
+            <div class="skills-examples flex flex-col flex-auto items-center justify-start my-4 text-center overflow-auto">
               <transition-group name="gallery" tag="div" class="skills-examples-item flex flex-wrap flex-auto w-full justify-center content-start items-start">
                 <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${example.images[0]})`">
                   <div class="skills-examples-mask flex items-center justify-center w-full h-full absolute transform translate-y-full">

@@ -1,11 +1,11 @@
 <template>
-  <div class="contact flex flex-col flex-auto -my-4 relative md:static">
+  <div class="contact flex flex-col flex-auto relative md:static">
     <div class="text-center py-4 relative md:static">
       <h1>
         Contact Me
       </h1>
     </div>
-    <div class="flex flex-col flex-auto justify-center items-center py-4">
+    <div class="flex flex-col flex-auto overflow-auto justify-center items-center py-4">
       <form class="flex flex-col gap-y-6 w-full max-w-lg" @submit.prevent="onSubmit">
         <div v-if="Object.keys(form.errors).length > 0" class="bg-red-700 text-white p-4 rounded">
           <span class="block mb-4">There were some issues with the information you provided</span>

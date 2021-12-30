@@ -1,15 +1,13 @@
 <template>
-  <div class="flex flex-col flex-auto -my-4 relative md:static">
+  <div class="profile flex flex-col flex-auto relative md:static">
     <div class="relative text-center py-4 md:static">
       <h1>
         Profile
       </h1>
     </div>
-    <div class="flex -mx-4 py-4 md:flex-col md:-my-4 md:-mx-0 md:items-center">
-      <img :src="portrait" alt="8Bit Avatar" class="w-full max-w-lg px-4 md:px-0 md:py-4">
-      <div class="flex-auto px-4 md:px-0 md:py-4">
-        {{ content }}
-      </div>
+    <div class="flex py-4 md:flex-col md:items-center overflow-auto">
+      <img :src="portrait" alt="8Bit Avatar" class="w-full max-w-lg px-4 md:px-0 md:py-4" />
+      <div class="flex-auto px-4 md:px-0 md:py-4 markdown-body overflow-auto" v-html="$md.render(content)" />
     </div>
   </div>
 </template>
@@ -42,3 +40,12 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.profile {
+  img {
+    max-height: clamp(16rem, 35vw, 20rem);
+    object-fit: contain;
+  }
+}
+</style>

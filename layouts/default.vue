@@ -19,6 +19,7 @@
 .markdown-body {
     font-family: 'PT Mono', monospace;
     color: #DBAB00 !important;
+    background: transparent;
 
     a {
       &:hover {

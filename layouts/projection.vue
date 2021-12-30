@@ -60,7 +60,7 @@
       </transition>
     </div>
     <div class="content flex flex-auto rounded my-8 overflow-auto w-7/10 xl:w-full">
-      <nuxt keep-alive class="p-8 md:px-4 md:py-0" />
+      <nuxt keep-alive class="p-4 md:px-4 md:py-0" />
     </div>
     <div class="flex gap-x-4 footer px-2 md:hidden">
       <a v-for="icon in $store.state.social" :key="icon.name" :href="icon.url" target="_blank">
@@ -120,12 +120,6 @@ export default {
     border: 0;
   }
 
-  .footer {
-    a {
-      
-    }
-  }
-
   .subnav {
     border-top: 1px solid;
     top: 70px;
@@ -136,48 +130,5 @@ export default {
 
   video {
     z-index: -1;
-  }
-
-  .projection {
-    transition: 0.2s all;
-
-    @media all and (max-width: 1279px) {
-      background-color: rgba(24, 16, 37, 0.9);
-    }
-
-    .content {
-      transition: 0.2s all;
-
-      @media all and (min-width: 767px) {
-        box-shadow: 0px 0px 5px 10px #3D275E;
-        background-color: rgba(24, 16, 37, 0.9);
-      }
-
-      /* width */
-      &::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      /* Track */
-      &::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      /* Handle */
-      &::-webkit-scrollbar-thumb {
-        background: transparent;
-      }
-
-      /* Handle on hover */
-      &::-webkit-scrollbar-thumb:hover {
-        background: #290C43;
-      }
-
-      &:hover {
-        &::-webkit-scrollbar-thumb {
-          background: #623589
-        }
-      }
-    }
   }
 </style>
