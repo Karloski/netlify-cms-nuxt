@@ -1,10 +1,12 @@
 {
-  "title": "Entragen",
-  "about": "Entragen (formerly Oilfield Services) is a website created using simple HTML/CSS (Bootstrap) and PHP.\n\nIt was originally created by a former colleague and picked up by me later into its development. It currently has 7 promotional pages, a login area for consultants and an admin area.\n\nThe workload for this project has currently been put on indefinite hold while we await further instructions from the client.",
-  "technical": "* CSS\n* HTML\n* JavaScript\n* PHP\n* Linux\n   * Apache\n* MySQL",
-  "url": "https://www.entragen.com/",
-  "images": [
-    "/img/entragen-aboutus.webp"
+  "carouselItems": [
+    {
+      "imageset": [
+        {
+          "source": "/img/entragen-aboutus.webp"
+        }
+      ]
+    }
   ],
   "resources": [
     {
@@ -21,5 +23,12 @@
     "Apache",
     "MySQL"
   ],
-  "carouselData": []
+  "carouselData": [],
+  "about": "Entragen (formerly Oilfield Services) is a website created using simple HTML/CSS (Bootstrap) and PHP.\n\nIt was originally created by a former colleague and picked up by me later into its development. It currently has 7 promotional pages, a login area for consultants and an admin area.\n\nThe workload for this project has currently been put on indefinite hold while we await further instructions from the client.",
+  "url": "https://www.entragen.com/",
+  "title": "Entragen",
+  "images": [
+    "/img/entragen-aboutus.webp"
+  ],
+  "technical": "* CSS\n* HTML\n* JavaScript\n* PHP\n* Linux\n   * Apache\n* MySQL"
 }
