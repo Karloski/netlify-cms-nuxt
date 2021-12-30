@@ -26,7 +26,7 @@
             </div>
             <div class="skills-examples flex flex-col flex-auto items-center justify-start my-4 text-center overflow-auto">
               <transition-group name="gallery" tag="div" class="skills-examples-item flex flex-wrap flex-auto w-full justify-center content-start items-start">
-                <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${example.images[0]})`">
+                <div v-for="example in examples" :key="example.title" class="relative overflow-hidden h-full w-full max-w-xl m-4 transition-all duration-500 bg-cover bg-center rounded-lg" :style="`background-image: url(${example.carouselItems[0].images[0].source})`">
                   <div class="skills-examples-mask flex items-center justify-center w-full h-full absolute transform translate-y-full">
                     <nuxt-link :to="`/projects/${example.slug}`" class="px-6 py-4 bg-transparent border rounded-lg button">
                       View Project

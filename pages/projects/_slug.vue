@@ -63,6 +63,7 @@
 
 <script>
 import Skill from '@/components/Skill'
+import mime from 'mime-types'
 
 export default {
   components: {
@@ -75,6 +76,9 @@ export default {
   layout: 'projection',
   asyncData ({ params }) {
     const data = require(`@/assets/content/pages/projects/${params.slug}`)
+
+    // FIXME: Remove from assets instead
+    delete data.carouselData
 
     return {
       url: '',
@@ -98,10 +102,57 @@ export default {
       return this.$store.state.projects[this.index + 1]
     },
     carouselData () {
+      return (this.carouselItems ?? []).map((carousel, id) => {
+        return {
+          id,
+          content: (createElement) => {
+            const picture = createElement('picture', [
+              ...carousel.images.map((img) => {
+                if (!img.default) {
+                  return createElement('source', {
+                    attrs: {
+                      srcset: img.source,
+                      type: mime.lookup(img.source) || 'image/jpeg',
+                      class: 'w-full rounded-lg object-cover h-64'
+                    }
+                  })
+                }
+              }),
+              createElement('img', {
+                attrs: {
+                  src: (carousel.images.find(img => !(mime.lookup(img.source) || '').includes('webp')) ?? carousel.images[0]).source,
+                  alt: carousel.alt ? carousel.alt : this.title,
+                  class: 'w-full rounded-lg object-cover h-64'
+                }
+              })
+            ])
+
+            return picture
+          }
+        }
+      })
+
       return this.images.map((img, id) => {
         return {
           id,
           content (createElement) {
+            const picture = createElement('picture', [
+              createElement('source', {
+                attrs: {
+                  srcset: img,
+                  type: "image/webp"
+                }
+              }),
+              createElement('img', {
+                attrs: {
+                  src: img,
+                  alt: this.title,
+                  class: 'w-full rounded-lg object-cover h-64'
+                }                
+              })
+            ])
+
+            return picture
             return createElement('img', {
               attrs: {
                 src: img,
@@ -124,31 +175,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-.project {
-  &-item {
-    &-header {
-      @media all and (min-width: 767px) {
-        &:hover img {
-          height: 32rem;
-        }
-
-        img {
-          transition: height 0.25s ease;
-        }
-      }
-    }
-
-    &-resources {
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-img {
-  width: 100%;
-}
-</style>

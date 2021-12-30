@@ -1,0 +1,25 @@
+.projects {
+  &-item {
+    &-header {
+      @media (min-width: 767px) {
+        &:hover img {
+          height: 32rem;
+        }
+
+        img {
+          transition: height 0.25s ease;
+        }
+      }
+    }
+
+    &-resources {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }  
+}

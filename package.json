@@ -21,6 +21,7 @@
     "animate.css": "^4.1.1",
     "github-markdown-css": "^5.1.0",
     "lodash": "^4.17.21",
+    "mime-types": "^2.1.34",
     "nuxt": "^2.12.2",
     "pluralize": "^8.0.0",
     "v-tooltip": "^2.0.3",

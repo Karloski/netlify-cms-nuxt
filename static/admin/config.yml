@@ -84,6 +84,16 @@ collections:
     folder: 'assets/content/pages/projects/'
     fields:
         - { label: Title, name: title, widget: string }
+        - label: Carousel Items
+          name: carouselItems
+          widget: list
+          fields: 
+            - { label: Description, name: alt, widget: string }
+            - label: Images
+              name: images
+              widget: list
+              fields: 
+                - { label: Source, name: source, widget: image, allow_multiple: true, media_library: { config: { multiple: true } } }
         - label: Images
           name: images
           widget: list
