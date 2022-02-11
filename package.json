@@ -30,7 +30,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.1",
     "netlify-lambda": "^2.0.15",
-    "node-sass": "^6.0.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^10.0.0"
   }
 }
