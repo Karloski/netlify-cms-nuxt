@@ -1,0 +1,70 @@
+{
+  "title": "Cizzle (formerly Resonance)",
+  "carouselItems": [
+    {
+      "alt": "Campaign Overview",
+      "images": [
+        {
+          "source": "/img/campaign-overview.jpg"
+        },
+        {
+          "source": "/img/campaign-overview.webp"
+        }
+      ]
+    },
+    {
+      "alt": "Login",
+      "images": [
+        {
+          "source": "/img/login-resonance.jpg"
+        },
+        {
+          "source": "/img/login-resonance.webp"
+        }
+      ]
+    },
+    {
+      "alt": "PR Report",
+      "images": [
+        {
+          "source": "/img/pr-report.webp"
+        },
+        {
+          "source": "/img/pr-report.jpg"
+        }
+      ]
+    },
+    {
+      "alt": "Dashboard",
+      "images": [
+        {
+          "source": "/img/dashboard.jpg"
+        },
+        {
+          "source": "/img/dashboard.webp"
+        }
+      ]
+    },
+    {
+      "alt": "Campaigns",
+      "images": [
+        {
+          "source": "/img/campaigns.webp"
+        },
+        {
+          "source": "/img/campaigns.jpg"
+        }
+      ]
+    }
+  ],
+  "about": "A﻿boot.",
+  "stack": [
+    "php",
+    "CSS",
+    "HTML",
+    "JavaScript",
+    "MySQL",
+    "SCSS"
+  ],
+  "url": "http://insight.phoenixpb.co.uk/"
+}
