@@ -280,6 +280,18 @@
       "name": "Divi",
       "type": "framework",
       "icon": "/img/divi-logo.svg"
+    },
+    {
+      "label": "React",
+      "name": "React",
+      "type": "framework",
+      "icon": "/img/react-icon.svg"
+    },
+    {
+      "label": "Gatsby",
+      "name": "Gatsby",
+      "type": "framework",
+      "icon": "/img/gatsby_monogram.png"
     }
   ]
 }
