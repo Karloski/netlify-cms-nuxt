@@ -292,6 +292,12 @@
       "name": "Gatsby",
       "type": "framework",
       "icon": "/img/gatsby_monogram.png"
+    },
+    {
+      "label": "NestJS",
+      "name": "NestJS",
+      "type": "framework",
+      "icon": "/img/nestjs-icon.svg"
     }
   ]
 }
