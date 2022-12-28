@@ -52,7 +52,11 @@
     "CSS",
     "HTML",
     "JavaScript",
-    "AWS"
+    "AWS",
+    "React",
+    "Serverless",
+    "Gatsby",
+    "NestJS"
   ],
   "url": "http://todoer-website-app-staging.s3-website-eu-west-1.amazonaws.com/"
 }
