@@ -1,0 +1,58 @@
+{
+  "title": "Todoer",
+  "carouselItems": [
+    {
+      "alt": "Login",
+      "images": [
+        {
+          "source": "/img/login.jpg"
+        },
+        {
+          "source": "/img/login.webp"
+        }
+      ]
+    },
+    {
+      "alt": "Projects",
+      "images": [
+        {
+          "source": "/img/projects.webp"
+        },
+        {
+          "source": "/img/projects.jpg"
+        }
+      ]
+    },
+    {
+      "alt": "Profile",
+      "images": [
+        {
+          "source": "/img/profile.jpg"
+        },
+        {
+          "source": "/img/profile.webp"
+        }
+      ]
+    },
+    {
+      "alt": "Project",
+      "images": [
+        {
+          "source": "/img/project.jpg"
+        },
+        {
+          "source": "/img/project.webp"
+        }
+      ]
+    }
+  ],
+  "about": "Aboot",
+  "stack": [
+    "npm",
+    "CSS",
+    "HTML",
+    "JavaScript",
+    "AWS"
+  ],
+  "url": "http://todoer-website-app-staging.s3-website-eu-west-1.amazonaws.com/"
+}
