@@ -1,0 +1,47 @@
+{
+  "title": "Glossy Starling",
+  "carouselItems": [
+    {
+      "alt": "Home",
+      "images": [
+        {
+          "source": "/img/home.jpg"
+        },
+        {
+          "source": "/img/home.webp"
+        }
+      ]
+    },
+    {
+      "alt": "YouYou",
+      "images": [
+        {
+          "source": "/img/youyou.jpg"
+        },
+        {
+          "source": "/img/youyou.webp"
+        }
+      ]
+    },
+    {
+      "alt": "YouYou Search",
+      "images": [
+        {
+          "source": "/img/youyou-search.jpg"
+        },
+        {
+          "source": "/img/youyou-search.webp"
+        }
+      ]
+    }
+  ],
+  "about": "A﻿boot.",
+  "stack": [
+    "CSS",
+    "HTML",
+    "JavaScript",
+    "SCSS",
+    "AWS"
+  ],
+  "url": "http://glossy-starling.co.uk"
+}
