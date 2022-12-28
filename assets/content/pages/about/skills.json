@@ -304,6 +304,12 @@
       "name": "Serverless",
       "type": "framework",
       "icon": "/img/serverless-icon.svg"
+    },
+    {
+      "label": "Postgres",
+      "name": "PostgresQL",
+      "type": "language",
+      "icon": "/img/postgresql-icon.svg"
     }
   ]
 }
