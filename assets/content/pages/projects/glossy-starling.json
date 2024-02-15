@@ -43,5 +43,11 @@
     "SCSS",
     "AWS"
   ],
-  "url": "http://glossy-starling.co.uk"
+  "url": "http://glossy-starling.co.uk",
+  "resources": [
+    {
+      "path": "https://www.glossy-starling.co.uk/",
+      "label": "Website"
+    }
+  ]
 }
