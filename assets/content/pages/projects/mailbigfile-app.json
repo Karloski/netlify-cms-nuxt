@@ -14,5 +14,15 @@
     "Ubuntu",
     "AWS"
   ],
-  "url": "https://app.mailbigfile.com/"
+  "url": "https://app.mailbigfile.com/",
+  "carouselItems": [
+    {
+      "images": [
+        {
+          "source": "/img/mbf-home.png"
+        }
+      ],
+      "alt": "Homepage"
+    }
+  ]
 }
