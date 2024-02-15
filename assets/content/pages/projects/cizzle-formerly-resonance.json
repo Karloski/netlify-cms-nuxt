@@ -57,7 +57,7 @@
       ]
     }
   ],
-  "about": "A﻿boot.",
+  "about": "C﻿izzle is an application for media and comms professionals.\n\nI﻿t allows them to manage and track advertising campaigns as well as provide a value for their campaigns.\n\nT﻿o enhance the product further, I collaborated with the client to add automation to the application. This allowed it to automatically retrieve relevant data regarding specific companies and/or campaigns and add any matching articles or media to their account. This took away the manual management of adding articles to the application and streamlined the process for clients of the application.\n\nT﻿he website is developed using HTML/CSS and PHP.",
   "stack": [
     "php",
     "CSS",
