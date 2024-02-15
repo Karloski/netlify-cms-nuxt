@@ -1,0 +1,18 @@
+{
+  "title": "MailBigFile App",
+  "about": "The current implementation of MailBigFile saw its services fragmented across several distributions, which added significant overhead to maintenance as well as providing an unintuitive experience for our users. T﻿he underlying tech stack for the application was also dated, making it difficult to provide new and relevant features.\n\nAs such, in 2023 I began the process of upgrading and replacing the current MailBigFile service to provide a faster, more streamlined application for our customers.\n\nT﻿he new application uses the same appearance as the current free service, as this was both the most used and in my opinion the easiest to use version that we offered. Enhancing and streamlining the sign up process for those using the free service would also increase the probability of successful signups.\n\nI﻿ also used this as an opportunity to improve the general infrastructure and tech stack of the application itself, utilizing several AWS features to aid speed and cost of the application. This includes: Amazon S3, API Gateway, Amazon EC2 (using Spot Instances), AWS Lambda, Auto-Scaling, Cloud Map, CodeCommit, CodeBuild, CodePipeline and more.\n\nThe application tech stack has been enhanced with Gatsby, a meta framework for React. Gatsby allows the application to be loaded statically from an S3 bucket, loaded over CloudFront, so that it can be quickly and reliability accessed. Loading the application statically, rather than have it rendered from a server, helps aid its speed in delivery as the files do not need to be created, parsed or evaluated prior to viewing.\n",
+  "resources": [
+    {
+      "path": "https://app.mailbigfile.com/",
+      "label": "Website"
+    }
+  ],
+  "stack": [
+    "CSS",
+    "HTML",
+    "JavaScript",
+    "Ubuntu",
+    "AWS"
+  ],
+  "url": "https://app.mailbigfile.com/"
+}
