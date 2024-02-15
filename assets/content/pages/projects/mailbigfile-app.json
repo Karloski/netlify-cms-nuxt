@@ -23,6 +23,22 @@
         }
       ],
       "alt": "Homepage"
+    },
+    {
+      "images": [
+        {
+          "source": "/img/uploader-preview.png"
+        }
+      ],
+      "alt": "Upload Preview"
+    },
+    {
+      "alt": "Transfer Download Page",
+      "images": [
+        {
+          "source": "/img/transfer-download-page.png"
+        }
+      ]
     }
   ]
 }
