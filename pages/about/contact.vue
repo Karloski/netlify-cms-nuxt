@@ -86,16 +86,16 @@ export default {
         this.form.success = ''
         this.form.submitting = true
 
-        await this.$axios.$post('/api/contact', {
-          ...this.form.attributes
-        })
+        await this.$axios.$post('/api/contact', this.form.attributes)
 
         this.form.success = 'Thanks for getting in touch!'
       } catch (e) {
-        if ('response' in e) {
+        if ('response' in e && e.response.data.errors) {
           this.form.errors = e.response.data.errors
-        } else {
-          this.form.errors = [e.message]
+        }
+
+        if ('message' in e) {
+          this.form.errors['error'] = e.message
         }
       } finally {
         this.form.submitting = false

@@ -7,7 +7,7 @@
     </div>
     <div class="flex py-4 md:flex-col md:items-center overflow-auto">
       <img :src="portrait" alt="8Bit Avatar" class="w-full max-w-lg px-4 md:px-0 md:py-4" />
-      <div class="flex-auto px-4 md:px-0 md:py-4 markdown-body overflow-auto" v-html="$md.render(content)" />
+      <div class="flex-auto px-4 md:px-0 md:py-4 markdown-body overflow-auto" v-html="$md.render(content)" style="font-size: 1.15rem;" />
     </div>
   </div>
 </template>

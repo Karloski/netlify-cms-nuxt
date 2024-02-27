@@ -28,7 +28,7 @@ const sendMail = async (name, email, msg) => {
     port: 465,
     auth: {
       user: 'me@carlwithak.me.uk',
-      pass: '@$kWjQ-4v9qk%pc'
+      pass: 'weX#8nH5ZrT5rC'
     },
     tls: {
       rejectUnauthorized: false
@@ -69,17 +69,17 @@ exports.handler = async (event, context) => {
     if (attributes.some(n => !(n in data))) {
       throw new Error(`One of ${attributes.toString()} not provided`)
     }
-  
+
     // Map each attribute name to the validated and sanitized equivalent (false if validation failed)
     const sanitized = attributes.map(n => n in data && validateAndSanitize(n, data[n]))
     const errors = {}
-  
+
     for (let i = 0; i < sanitized.length; i++) {
       if (!sanitized[i]) {
         errors[attributes[i]] = rejections[attributes[i]].message
       }
     }
-  
+
     if (Object.keys(errors).length > 0) {
       return {
         statusCode: 400,
