@@ -16,7 +16,8 @@
     "React",
     "Gatsby",
     "NestJS",
-    "PostgresQL"
+    "PostgresQL",
+    "TypeScript"
   ],
   "url": "https://app.mailbigfile.com/",
   "carouselItems": [
