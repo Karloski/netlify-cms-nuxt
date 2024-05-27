@@ -54,5 +54,11 @@
     "npm"
   ],
   "url": "https://staging.peopletrac.dessol.com",
-  "about": "PeopleTRaC, a competence management platform led by a seasoned CMS professional from the oil and gas industry, empowers companies to manage and train employees for their specific skill needs. I am spearheading its complete implementation and delivery.\n\nTo ensure a fast and smooth user experience, I built the backend API using NestJS for code consistency (JavaScript/TypeScript) and opted for a statically-hosted application with Gatsby (React meta framework) for speedier delivery via S3 and CloudFront. This approach, chosen over Next.js, prioritized page speed and optimal UX for the primarily static website.\n\nTo optimize infrastructure and cost efficiency, I leveraged a suite of AWS features including Amazon S3, API Gateway, EC2 (Spot Instances), Lambda, and Auto-Scaling.\n\nThis application is currently in development."
+  "about": "PeopleTRaC, a competence management platform led by a seasoned CMS professional from the oil and gas industry, empowers companies to manage and train employees for their specific skill needs. I am spearheading its complete implementation and delivery.\n\nTo ensure a fast and smooth user experience, I built the backend API using NestJS for code consistency (JavaScript/TypeScript) and opted for a statically-hosted application with Gatsby (React meta framework) for speedier delivery via S3 and CloudFront. This approach, chosen over Next.js, prioritized page speed and optimal UX for the primarily static website.\n\nTo optimize infrastructure and cost efficiency, I leveraged a suite of AWS features including Amazon S3, API Gateway, EC2 (Spot Instances), Lambda, and Auto-Scaling.\n\nThis application is currently in development.",
+  "resources": [
+    {
+      "path": "https://staging.peopletrac.dessol.com",
+      "label": "Website (Staging)"
+    }
+  ]
 }
