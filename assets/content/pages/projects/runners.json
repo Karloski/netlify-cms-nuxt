@@ -61,7 +61,7 @@
     "Vue",
     "MySQL"
   ],
-  "about": "Runners was a project that allowed people to schedule and map recreational activities with their friends and family. One of the main features we wanted to provide was a way to set out and map your run using Google Maps.\n\nI was the project lead for the Runners project and fully designed and implemented it, including DevOps.\n\nThe project itself was created with Laravel and Vue using a REST API architecture. Laravel was chosen for its ability to streamline the project creation process with a language I was familiar with, and Vue was chosen for the frontend as it provides a more app like experience for web applications, which was the aim for this project.\n\nThe project has since been abandoned as it was believed that the project could not be lucrative enough given the required time investment.",
+  "about": "Runners was a project that allowed people to schedule and map recreational activities with their friends and family. One of the main features we wanted to provide was a way to set out and map your run using Google Maps.\n\nI was the project lead for the Runners project and fully designed and implemented it, including DevOps.\n\nThe project itself was created with Laravel and Vue using a REST API architecture. Laravel was chosen for its ability to streamline the project creation process with a language I was familiar with, and Vue was chosen for the frontend as it provides a more app like experience for web applications, which was the aim for this project.\n\nThe project has since been abandoned.",
   "url": "",
   "title": "Runners",
   "images": [],
