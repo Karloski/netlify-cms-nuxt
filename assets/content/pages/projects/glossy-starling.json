@@ -35,7 +35,7 @@
       ]
     }
   ],
-  "about": "G﻿lossy Starling is a static website developed using simple HTML/CSS, rendering from the server using PHP.\n\nI﻿t is intended as a promotional website for the client, as well as a place to house their YouYou project, which allows customers to view information held by client regarding varying media entities.",
+  "about": "G﻿lossy Starling is a static website developed using HTML/CSS and php.\n\nIt is a platform to showcase their services and YouYou project. YouYou allows customers to access and view information about various media entities held by the client.",
   "stack": [
     "CSS",
     "HTML",
